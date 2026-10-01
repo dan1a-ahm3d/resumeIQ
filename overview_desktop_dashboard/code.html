@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; } .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "outline-variant": "#c6c6cd", "inverse-primary": "#bec6e0", "surface-bright": "#f8f9ff", "on-secondary-container": "#57657b", "surface-container-highest": "#d3e4fe", "primary-fixed-dim": "#bec6e0", "surface-container-low": "#eff4ff", "on-tertiary": "#ffffff", "secondary": "#515f74", "surface-tint": "#565e74", "on-primary-container": "#7c839b", "surface-container-lowest": "#ffffff", "surface-variant": "#d3e4fe", "on-tertiary-container": "#98805d", "on-secondary-fixed-variant": "#3a485c", "background": "#f8f9ff", "tertiary-fixed": "#fcdeb5", "surface-container-high": "#dce9ff", "inverse-on-surface": "#eaf1ff", "secondary-fixed-dim": "#b9c7e0", "primary-container": "#131b2e", "surface-dim": "#cbdbf5", "on-error": "#ffffff", "surface": "#f8f9ff", "surface-container": "#e5eeff", "error": "#ba1a1a", "on-primary-fixed-variant": "#3f465c", "secondary-fixed": "#d5e3fd", "outline": "#76777d", "tertiary-fixed-dim": "#dec29a", "inverse-surface": "#213145", "on-error-container": "#93000a", "on-secondary-fixed": "#0d1c2f", "error-container": "#ffdad6", "on-primary": "#ffffff", "on-background": "#0b1c30", "on-primary-fixed": "#131b2e", "secondary-container": "#d5e3fd", "primary": "#000000", "on-secondary": "#ffffff", "on-tertiary-fixed-variant": "#574425", "primary-fixed": "#dae2fd", "on-tertiary-fixed": "#271901", "on-surface": "#0b1c30", "tertiary": "#000000", "on-surface-variant": "#45464d", "tertiary-container": "#271901" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-xl": "2rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "space-md": "1rem", "space-xs": "0.25rem", "gutter": "1rem", "margin": "1.5rem" }, "fontFamily": { "body-default": ["Inter"], "headline-lg-mobile": ["Inter"], "table-header": ["Inter"], "meta-medium": ["Inter"], "label-default": ["Inter"], "headline-md": ["Inter"], "headline-sm": ["Inter"], "meta-default": ["Inter"], "headline-lg": ["Inter"], "body-medium": ["Inter"], "code-mono": ["JetBrains Mono"] }, "fontSize": { "body-default": ["14px", { "lineHeight": "20px", "letterSpacing": "-0.006em", "fontWeight": "400" }], "headline-lg-mobile": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "table-header": ["11px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "meta-medium": ["12px", { "lineHeight": "16px", "letterSpacing": "0", "fontWeight": "500" }], "label-default": ["13px", { "lineHeight": "18px", "letterSpacing": "-0.005em", "fontWeight": "500" }], "headline-md": ["20px", { "lineHeight": "26px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "headline-sm": ["16px", { "lineHeight": "22px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "meta-default": ["12px", { "lineHeight": "16px", "letterSpacing": "0", "fontWeight": "400" }], "headline-lg": ["26px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "body-medium": ["14px", { "lineHeight": "20px", "letterSpacing": "-0.006em", "fontWeight": "500" }], "code-mono": ["12px", { "lineHeight": "16px", "letterSpacing": "0", "fontWeight": "400" }] } } } };</script></head><body class="bg-background font-body-default text-body-default text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-[220px] bg-surface-container-lowest border-r border-outline-variant/30 z-50 flex flex-col justify-between select-none"><div class="flex flex-col"><div class="h-16 flex items-center gap-space-sm px-space-md border-b border-outline-variant/20"><img alt="Brand logo. - Primary color: #0f172a
+- Font: manrope
+- Mode: light
+- Roundness: rounded-sm
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1X2J5ywd_0lOGTbhZAi4dHahrgXR3CKTV3FmcmT6wZBLpJutE7llzZNiCjQA9tL1J_OdHtK02rZTEZfsbVyynTfaDyLP0MdRZACx1cbn-PMAc9DxynIvr-eUgjopvYuS1DLlYsKzQfxIFDMPe4dlF0QmIStKdiU5JciKQjMDd9nHcTzTXwq8Ns1JGDP2wOcHDXhwQojYbLAo0qwJY2lnISSX6xQqMJmJ_H0GOXYYQWn3H6roaM42RGR6g"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">ResumeIQ</span><span class="font-table-header text-table-header text-outline tracking-wider uppercase mt-0.5">Intelligence</span></div></div><div class="px-space-sm pt-space-md pb-space-xs"><span class="px-space-sm font-table-header text-table-header text-outline uppercase tracking-wider">Workspace</span></div><nav class="flex flex-col gap-0.5 px-space-sm" data-active-classes="bg-surface-container-high text-on-surface font-body-medium"><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-1.5 rounded-lg transition-colors bg-surface-container-high text-on-surface font-body-medium" data-path="overview" href="#"><span class="material-symbols-outlined text-[18px]">grid_view</span><span>Overview</span></a><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-default text-body-default" data-path="analyses" href="#"><span class="material-symbols-outlined text-[18px]">insights</span><span>Analyses</span></a><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-default text-body-default" data-path="candidates" href="#"><span class="material-symbols-outlined text-[18px]">group</span><span>Candidates</span></a><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-default text-body-default" data-path="reports" href="#"><span class="material-symbols-outlined text-[18px]">summarize</span><span>Reports</span></a></nav><div class="my-space-md mx-space-sm border-t border-outline-variant/30"></div><div class="px-space-sm pb-space-xs"><span class="px-space-sm font-table-header text-table-header text-outline uppercase tracking-wider">System</span></div><nav class="flex flex-col gap-0.5 px-space-sm" data-active-classes="bg-surface-container-high text-on-surface font-body-medium"><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-default text-body-default" data-path="settings" href="#"><span class="material-symbols-outlined text-[18px]">tune</span><span>Settings</span></a><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-default text-body-default" data-path="help" href="#"><span class="material-symbols-outlined text-[18px]">help</span><span>Help</span></a></nav></div><div class="p-space-md border-t border-outline-variant/20"><div class="flex items-center justify-between text-outline"><span class="font-code-mono text-code-mono">v1.0.4</span><span class="inline-flex items-center gap-1 font-meta-default text-meta-default text-on-surface-variant"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Enterprise</span></div></div></aside><div class="pl-[220px]"><header class="fixed top-0 left-[220px] right-0 h-16 bg-surface-container-lowest border-b border-outline-variant/30 z-40 px-space-xl flex items-center justify-between"><div class="flex items-center gap-space-sm"><span class="font-meta-default text-meta-default text-outline">ResumeIQ</span><span class="text-outline-variant">/</span><span class="font-label-default text-label-default text-on-surface">Talent Platform</span></div><div class="flex items-center gap-space-md"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-2.5 text-outline text-[16px]">search</span><input class="h-8 pl-8 pr-12 w-64 rounded-lg bg-surface-container-lowest border border-outline-variant/40 font-body-default text-body-default text-on-surface placeholder:text-outline focus:outline-none cursor-pointer" placeholder="Search candidates, files..." readonly="" type="text"/><kbd class="absolute right-2 px-1.5 py-0.5 border border-outline-variant/30 rounded font-code-mono text-[10px] text-outline bg-surface-container-low">⌘K</kbd></div><button class="h-8 w-8 flex items-center justify-center rounded-lg border border-outline-variant/30 bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">help_outline</span></button><div class="h-5 w-px bg-outline-variant/30"></div><div class="flex items-center gap-space-sm pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover border border-outline-variant/20" src="https://lh3.googleusercontent.com/aida/AEtjO1U_oz0f3mcSRDjTk3GMFrTwjjT5q_L_Khv6JprVOWrHLUAFedMOb2hVYwih8Pwfo6REkyJPSNRLnTkacP7MF7Qoomm4pj9JHbWdZpCx3EBRTU9Indl-CWkPUF0R0mIJeAvytjkeieGblIHej5FGonI5IG5VD9GmjrYVAD_X8yNsrbfQjfFi8Kk9Er1Df4SUihNqIkuQi0H422V-U0Z4wH6XnrP5D7nwC29R-BEzCmMpkr0bo_oBqmHXQr8"/><div class="hidden md:flex flex-col text-left"><span class="font-label-default text-label-default text-on-surface leading-tight">Elena Rostov</span><span class="font-meta-default text-meta-default text-outline leading-tight">Talent Lead</span></div><span class="material-symbols-outlined text-outline text-[18px]">expand_more</span></div></div></header><main class="relative pt-16 bg-background min-h-screen"><div class="max-w-[1280px] mx-auto p-space-xl"><div class="flex flex-col w-full">
+<div class="max-w-[1240px] w-full mx-auto flex flex-col gap-space-lg">
+<!-- Header Block -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex flex-col gap-0.5">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Overview</h1>
+<p class="font-body-default text-body-default text-outline">Review recent candidate analyses and resume matching activity.</p>
+</div>
+<div class="flex items-center gap-space-sm self-start sm:self-auto">
+<button class="inline-flex items-center gap-1.5 h-8 px-3 rounded bg-primary text-on-primary font-label-default text-label-default hover:bg-on-surface transition-colors cursor-pointer select-none" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>New Analysis</span>
+</button>
+</div>
+</div>
+<!-- Compact 4-Column Metrics Row -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Metric 1 -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg flex flex-col gap-1">
+<span class="font-table-header text-table-header uppercase text-outline tracking-wider">Analyses</span>
+<div class="flex items-baseline justify-between mt-1">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-semibold tracking-tight">24</span>
+<span class="font-code-mono text-[11px] text-outline">RUN-M30</span>
+</div>
+<span class="font-meta-default text-meta-default text-outline mt-0.5">Last 30 days</span>
+</div>
+<!-- Metric 2 -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg flex flex-col gap-1">
+<span class="font-table-header text-table-header uppercase text-outline tracking-wider">Resumes processed</span>
+<div class="flex items-baseline justify-between mt-1">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-semibold tracking-tight">482</span>
+<span class="font-meta-medium text-meta-medium text-on-surface-variant bg-surface-container px-1.5 py-0.5 rounded">+38 this wk</span>
+</div>
+<span class="font-meta-default text-meta-default text-outline mt-0.5">+38 this week</span>
+</div>
+<!-- Metric 3 -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg flex flex-col gap-1">
+<span class="font-table-header text-table-header uppercase text-outline tracking-wider">Candidates reviewed</span>
+<div class="flex items-baseline justify-between mt-1">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-semibold tracking-tight">164</span>
+<span class="font-meta-medium text-meta-medium text-on-surface">34.0%</span>
+</div>
+<span class="font-meta-default text-meta-default text-outline mt-0.5">34% match rate</span>
+</div>
+<!-- Metric 4 -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg flex flex-col gap-1">
+<span class="font-table-header text-table-header uppercase text-outline tracking-wider">Reports exported</span>
+<div class="flex items-baseline justify-between mt-1">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-semibold tracking-tight">42</span>
+<span class="font-code-mono text-[11px] text-outline">SEC-AUD</span>
+</div>
+<span class="font-meta-default text-meta-default text-outline mt-0.5">Audit-ready dossiers</span>
+</div>
+</div>
+<!-- Main Section — RECENT ANALYSES -->
+<div class="bg-surface-container-lowest rounded-lg overflow-hidden flex flex-col">
+<!-- Table Controls Bar -->
+<div class="px-space-md py-space-sm flex flex-col md:flex-row md:items-center justify-between gap-space-sm bg-surface-container-lowest">
+<div class="flex items-center gap-space-md">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Recent Analyses</h2>
+<div class="flex items-center gap-1 bg-surface-container-low p-0.5 rounded">
+<button class="tab-pill active px-2.5 py-1 text-meta-medium font-meta-medium rounded bg-surface-container-lowest text-on-surface transition-all select-none" type="button">
+              All <span class="text-outline font-code-mono text-[11px] ml-0.5">24</span>
+</button>
+<button class="tab-pill px-2.5 py-1 text-meta-medium font-meta-medium rounded text-outline hover:text-on-surface transition-all select-none" type="button">
+              In progress <span class="text-outline font-code-mono text-[11px] ml-0.5">2</span>
+</button>
+<button class="tab-pill px-2.5 py-1 text-meta-medium font-meta-medium rounded text-outline hover:text-on-surface transition-all select-none" type="button">
+              Completed <span class="text-outline font-code-mono text-[11px] ml-0.5">22</span>
+</button>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-2.5 text-outline text-[16px]">search</span>
+<input class="h-8 pl-8 pr-3 w-56 rounded bg-surface-container-low font-body-default text-body-default text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest transition-colors" id="role-search-input" placeholder="Search roles or req..." type="text"/>
+</div>
+<button class="h-8 px-2.5 inline-flex items-center gap-1.5 rounded bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors text-label-default font-label-default" type="button">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+<span>Filter</span>
+</button>
+</div>
+</div>
+<!-- Table Viewport -->
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-outline font-table-header text-table-header uppercase">
+<th class="py-2 px-space-md font-semibold tracking-wider w-[38%]" scope="col">Job Role</th>
+<th class="py-2 px-space-md font-semibold tracking-wider w-[18%]" scope="col">Candidates</th>
+<th class="py-2 px-space-md font-semibold tracking-wider w-[18%]" scope="col">Date Created</th>
+<th class="py-2 px-space-md font-semibold tracking-wider w-[16%]" scope="col">Status</th>
+<th class="py-2 px-space-md font-semibold tracking-wider text-right w-[10%]" scope="col">Actions</th>
+</tr>
+</thead>
+<tbody class="font-body-default text-body-default text-on-surface" id="analyses-table-body">
+<!-- Row 1 -->
+<tr class="analysis-row hover:bg-surface-container-low/60 transition-colors" data-status="Completed">
+<td class="py-2.5 px-space-md">
+<div class="flex flex-col min-w-0">
+<span class="font-body-medium text-body-medium text-on-surface truncate">Machine Learning Intern</span>
+<span class="font-meta-default text-meta-default text-outline truncate">AI &amp; Analytics • Req #4092</span>
+</div>
+</td>
+<td class="py-2.5 px-space-md font-code-mono text-code-mono text-on-surface-variant">
+                24 candidates
+              </td>
+<td class="py-2.5 px-space-md font-meta-default text-meta-default text-outline">
+                Sep 30, 2026
+              </td>
+<td class="py-2.5 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-surface-container-low text-on-surface font-meta-medium text-meta-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  Completed
+                </span>
+</td>
+<td class="py-2.5 px-space-md text-right">
+<a class="font-label-default text-label-default text-on-surface-variant hover:text-on-surface transition-colors inline-flex items-center gap-0.5" href="#">
+                  View
+                  <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</a>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="analysis-row hover:bg-surface-container-low/60 transition-colors" data-status="Completed">
+<td class="py-2.5 px-space-md">
+<div class="flex flex-col min-w-0">
+<span class="font-body-medium text-body-medium text-on-surface truncate">Data Analyst Intern</span>
+<span class="font-meta-default text-meta-default text-outline truncate">Business Intelligence • Req #3881</span>
+</div>
+</td>
+<td class="py-2.5 px-space-md font-code-mono text-code-mono text-on-surface-variant">
+                18 candidates
+              </td>
+<td class="py-2.5 px-space-md font-meta-default text-meta-default text-outline">
+                Sep 28, 2026
+              </td>
+<td class="py-2.5 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-surface-container-low text-on-surface font-meta-medium text-meta-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  Completed
+                </span>
+</td>
+<td class="py-2.5 px-space-md text-right">
+<a class="font-label-default text-label-default text-on-surface-variant hover:text-on-surface transition-colors inline-flex items-center gap-0.5" href="#">
+                  View
+                  <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</a>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="analysis-row hover:bg-surface-container-low/60 transition-colors" data-status="Completed">
+<td class="py-2.5 px-space-md">
+<div class="flex flex-col min-w-0">
+<span class="font-body-medium text-body-medium text-on-surface truncate">Senior Backend Engineer</span>
+<span class="font-meta-default text-meta-default text-outline truncate">Core Infrastructure • Req #3610</span>
+</div>
+</td>
+<td class="py-2.5 px-space-md font-code-mono text-code-mono text-on-surface-variant">
+                36 candidates
+              </td>
+<td class="py-2.5 px-space-md font-meta-default text-meta-default text-outline">
+                Sep 25, 2026
+              </td>
+<td class="py-2.5 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-surface-container-low text-on-surface font-meta-medium text-meta-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  Completed
+                </span>
+</td>
+<td class="py-2.5 px-space-md text-right">
+<a class="font-label-default text-label-default text-on-surface-variant hover:text-on-surface transition-colors inline-flex items-center gap-0.5" href="#">
+                  View
+                  <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</a>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="analysis-row hover:bg-surface-container-low/60 transition-colors" data-status="Completed">
+<td class="py-2.5 px-space-md">
+<div class="flex flex-col min-w-0">
+<span class="font-body-medium text-body-medium text-on-surface truncate">Frontend Engineer (React)</span>
+<span class="font-meta-default text-meta-default text-outline truncate">Design Engineering • Req #3550</span>
+</div>
+</td>
+<td class="py-2.5 px-space-md font-code-mono text-code-mono text-on-surface-variant">
+                29 candidates
+              </td>
+<td class="py-2.5 px-space-md font-meta-default text-meta-default text-outline">
+                Sep 22, 2026
+              </td>
+<td class="py-2.5 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-surface-container-low text-on-surface font-meta-medium text-meta-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  Completed
+                </span>
+</td>
+<td class="py-2.5 px-space-md text-right">
+<a class="font-label-default text-label-default text-on-surface-variant hover:text-on-surface transition-colors inline-flex items-center gap-0.5" href="#">
+                  View
+                  <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</a>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="analysis-row hover:bg-surface-container-low/60 transition-colors" data-status="Processing">
+<td class="py-2.5 px-space-md">
+<div class="flex flex-col min-w-0">
+<span class="font-body-medium text-body-medium text-on-surface truncate">Applied ML Scientist</span>
+<span class="font-meta-default text-meta-default text-outline truncate">Research Lab • Req #3490</span>
+</div>
+</td>
+<td class="py-2.5 px-space-md font-code-mono text-code-mono text-on-surface-variant">
+                15 candidates
+              </td>
+<td class="py-2.5 px-space-md font-meta-default text-meta-default text-outline">
+                Sep 18, 2026
+              </td>
+<td class="py-2.5 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-meta-medium text-meta-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-outline animate-pulse"></span>
+                  Processing
+                </span>
+</td>
+<td class="py-2.5 px-space-md text-right">
+<a class="font-label-default text-label-default text-on-surface-variant hover:text-on-surface transition-colors inline-flex items-center gap-0.5" href="#">
+                  View
+                  <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</a>
+</td>
+</tr>
+<!-- Row 6 -->
+<tr class="analysis-row hover:bg-surface-container-low/60 transition-colors" data-status="Completed">
+<td class="py-2.5 px-space-md">
+<div class="flex flex-col min-w-0">
+<span class="font-body-medium text-body-medium text-on-surface truncate">DevOps &amp; Site Reliability</span>
+<span class="font-meta-default text-meta-default text-outline truncate">Platform Engineering • Req #3312</span>
+</div>
+</td>
+<td class="py-2.5 px-space-md font-code-mono text-code-mono text-on-surface-variant">
+                22 candidates
+              </td>
+<td class="py-2.5 px-space-md font-meta-default text-meta-default text-outline">
+                Sep 14, 2026
+              </td>
+<td class="py-2.5 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-surface-container-low text-on-surface font-meta-medium text-meta-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  Completed
+                </span>
+</td>
+<td class="py-2.5 px-space-md text-right">
+<a class="font-label-default text-label-default text-on-surface-variant hover:text-on-surface transition-colors inline-flex items-center gap-0.5" href="#">
+                  View
+                  <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination / Footer -->
+<div class="px-space-md py-space-sm bg-surface-container-lowest flex items-center justify-between">
+<span class="font-meta-default text-meta-default text-outline">
+          Showing <span class="text-on-surface font-body-medium">1</span> to <span class="text-on-surface font-body-medium">6</span> of <span class="text-on-surface font-body-medium">24</span> analyses
+        </span>
+<div class="flex items-center gap-1.5">
+<button class="h-7 px-2.5 rounded bg-surface-container-low text-outline opacity-50 cursor-not-allowed font-label-default text-label-default inline-flex items-center gap-1" disabled="" type="button">
+<span class="material-symbols-outlined text-[14px]">chevron_left</span>
+            Previous
+          </button>
+<button class="h-7 px-2.5 rounded bg-surface-container-low text-on-surface hover:bg-surface-container transition-colors font-label-default text-label-default inline-flex items-center gap-1" type="button">
+            Next
+            <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function initOverviewInteractions() {
+    const searchInput = document.getElementById('role-search-input');
+    const tableRows = document.querySelectorAll('.analysis-row');
+    const tabs = document.querySelectorAll('.tab-pill');
+
+    let currentFilter = 'All';
+
+    function applyFilterAndSearch() {
+      const query = (searchInput ? searchInput.value : '').toLowerCase().trim();
+      tableRows.forEach(row => {
+        const text = row.textContent.toLowerCase();
+        const status = row.getAttribute('data-status');
+        
+        let matchesTab = true;
+        if (currentFilter === 'In progress') {
+          matchesTab = (status === 'Processing');
+        } else if (currentFilter === 'Completed') {
+          matchesTab = (status === 'Completed');
+        }
+
+        const matchesQuery = !query || text.includes(query);
+
+        if (matchesTab && matchesQuery) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    }
+
+    if (searchInput) {
+      searchInput.addEventListener('input', applyFilterAndSearch);
+    }
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => {
+          t.classList.remove('bg-surface-container-lowest', 'text-on-surface');
+          t.classList.add('text-outline');
+        });
+        tab.classList.add('bg-surface-container-lowest', 'text-on-surface');
+        tab.classList.remove('text-outline');
+
+        const label = tab.textContent.trim();
+        if (label.startsWith('All')) currentFilter = 'All';
+        else if (label.startsWith('In progress')) currentFilter = 'In progress';
+        else if (label.startsWith('Completed')) currentFilter = 'Completed';
+
+        applyFilterAndSearch();
+      });
+    });
+  })();
+</script></div></main></div></body></html>

@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; } .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "outline-variant": "#c6c6cd", "inverse-primary": "#bec6e0", "surface-bright": "#f8f9ff", "on-secondary-container": "#57657b", "surface-container-highest": "#d3e4fe", "primary-fixed-dim": "#bec6e0", "surface-container-low": "#eff4ff", "on-tertiary": "#ffffff", "secondary": "#515f74", "surface-tint": "#565e74", "on-primary-container": "#7c839b", "surface-container-lowest": "#ffffff", "surface-variant": "#d3e4fe", "on-tertiary-container": "#98805d", "on-secondary-fixed-variant": "#3a485c", "background": "#f8f9ff", "tertiary-fixed": "#fcdeb5", "surface-container-high": "#dce9ff", "inverse-on-surface": "#eaf1ff", "secondary-fixed-dim": "#b9c7e0", "primary-container": "#131b2e", "surface-dim": "#cbdbf5", "on-error": "#ffffff", "surface": "#f8f9ff", "surface-container": "#e5eeff", "error": "#ba1a1a", "on-primary-fixed-variant": "#3f465c", "secondary-fixed": "#d5e3fd", "outline": "#76777d", "tertiary-fixed-dim": "#dec29a", "inverse-surface": "#213145", "on-error-container": "#93000a", "on-secondary-fixed": "#0d1c2f", "error-container": "#ffdad6", "on-primary": "#ffffff", "on-background": "#0b1c30", "on-primary-fixed": "#131b2e", "secondary-container": "#d5e3fd", "primary": "#000000", "on-secondary": "#ffffff", "on-tertiary-fixed-variant": "#574425", "primary-fixed": "#dae2fd", "on-tertiary-fixed": "#271901", "on-surface": "#0b1c30", "tertiary": "#000000", "on-surface-variant": "#45464d", "tertiary-container": "#271901" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-xl": "2rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "space-md": "1rem", "space-xs": "0.25rem", "gutter": "1rem", "margin": "1.5rem" }, "fontFamily": { "body-default": ["Inter"], "headline-lg-mobile": ["Inter"], "table-header": ["Inter"], "meta-medium": ["Inter"], "label-default": ["Inter"], "headline-md": ["Inter"], "headline-sm": ["Inter"], "meta-default": ["Inter"], "headline-lg": ["Inter"], "body-medium": ["Inter"], "code-mono": ["JetBrains Mono"] }, "fontSize": { "body-default": ["14px", { "lineHeight": "20px", "letterSpacing": "-0.006em", "fontWeight": "400" }], "headline-lg-mobile": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "table-header": ["11px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "meta-medium": ["12px", { "lineHeight": "16px", "letterSpacing": "0", "fontWeight": "500" }], "label-default": ["13px", { "lineHeight": "18px", "letterSpacing": "-0.005em", "fontWeight": "500" }], "headline-md": ["20px", { "lineHeight": "26px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "headline-sm": ["16px", { "lineHeight": "22px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "meta-default": ["12px", { "lineHeight": "16px", "letterSpacing": "0", "fontWeight": "400" }], "headline-lg": ["26px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "body-medium": ["14px", { "lineHeight": "20px", "letterSpacing": "-0.006em", "fontWeight": "500" }], "code-mono": ["12px", { "lineHeight": "16px", "letterSpacing": "0", "fontWeight": "400" }] } } } };</script></head><body class="bg-background font-body-default text-body-default text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-[220px] bg-surface-container-lowest border-r border-outline-variant/30 z-50 flex flex-col justify-between select-none"><div class="flex flex-col"><div class="h-16 flex items-center gap-space-sm px-space-md border-b border-outline-variant/20"><img alt="Brand logo. - Primary color: #0f172a
+- Font: manrope
+- Mode: light
+- Roundness: rounded-sm
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1X2J5ywd_0lOGTbhZAi4dHahrgXR3CKTV3FmcmT6wZBLpJutE7llzZNiCjQA9tL1J_OdHtK02rZTEZfsbVyynTfaDyLP0MdRZACx1cbn-PMAc9DxynIvr-eUgjopvYuS1DLlYsKzQfxIFDMPe4dlF0QmIStKdiU5JciKQjMDd9nHcTzTXwq8Ns1JGDP2wOcHDXhwQojYbLAo0qwJY2lnISSX6xQqMJmJ_H0GOXYYQWn3H6roaM42RGR6g"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">ResumeIQ</span><span class="font-table-header text-table-header text-outline tracking-wider uppercase mt-0.5">Intelligence</span></div></div><div class="px-space-sm pt-space-md pb-space-xs"><span class="px-space-sm font-table-header text-table-header text-outline uppercase tracking-wider">Workspace</span></div><nav class="flex flex-col gap-0.5 px-space-sm" data-active-classes="bg-surface-container-high text-on-surface font-body-medium"><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-default text-body-default" data-path="overview" href="#"><span class="material-symbols-outlined text-[18px]">grid_view</span><span>Overview</span></a><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-default text-body-default" data-path="analyses" href="#"><span class="material-symbols-outlined text-[18px]">insights</span><span>Analyses</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-1.5 rounded-lg transition-colors bg-surface-container-high text-on-surface font-body-medium" data-path="candidates" href="#"><span class="material-symbols-outlined text-[18px]">group</span><span>Candidates</span></a><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-default text-body-default" data-path="reports" href="#"><span class="material-symbols-outlined text-[18px]">summarize</span><span>Reports</span></a></nav><div class="my-space-md mx-space-sm border-t border-outline-variant/30"></div><div class="px-space-sm pb-space-xs"><span class="px-space-sm font-table-header text-table-header text-outline uppercase tracking-wider">System</span></div><nav class="flex flex-col gap-0.5 px-space-sm" data-active-classes="bg-surface-container-high text-on-surface font-body-medium"><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-default text-body-default" data-path="settings" href="#"><span class="material-symbols-outlined text-[18px]">tune</span><span>Settings</span></a><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-default text-body-default" data-path="help" href="#"><span class="material-symbols-outlined text-[18px]">help</span><span>Help</span></a></nav></div><div class="p-space-md border-t border-outline-variant/20"><div class="flex items-center justify-between text-outline"><span class="font-code-mono text-code-mono">v1.0.4</span><span class="inline-flex items-center gap-1 font-meta-default text-meta-default text-on-surface-variant"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Enterprise</span></div></div></aside><div class="pl-[220px]"><header class="fixed top-0 left-[220px] right-0 h-16 bg-surface-container-lowest border-b border-outline-variant/30 z-40 px-space-xl flex items-center justify-between"><div class="flex items-center gap-space-sm"><span class="font-meta-default text-meta-default text-outline">ResumeIQ</span><span class="text-outline-variant">/</span><span class="font-label-default text-label-default text-on-surface">Talent Platform</span></div><div class="flex items-center gap-space-md"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-2.5 text-outline text-[16px]">search</span><input class="h-8 pl-8 pr-12 w-64 rounded-lg bg-surface-container-lowest border border-outline-variant/40 font-body-default text-body-default text-on-surface placeholder:text-outline focus:outline-none cursor-pointer" placeholder="Search candidates, files..." readonly="" type="text"/><kbd class="absolute right-2 px-1.5 py-0.5 border border-outline-variant/30 rounded font-code-mono text-[10px] text-outline bg-surface-container-low">⌘K</kbd></div><button class="h-8 w-8 flex items-center justify-center rounded-lg border border-outline-variant/30 bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">help_outline</span></button><div class="h-5 w-px bg-outline-variant/30"></div><div class="flex items-center gap-space-sm pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover border border-outline-variant/20" src="https://lh3.googleusercontent.com/aida/AEtjO1U_oz0f3mcSRDjTk3GMFrTwjjT5q_L_Khv6JprVOWrHLUAFedMOb2hVYwih8Pwfo6REkyJPSNRLnTkacP7MF7Qoomm4pj9JHbWdZpCx3EBRTU9Indl-CWkPUF0R0mIJeAvytjkeieGblIHej5FGonI5IG5VD9GmjrYVAD_X8yNsrbfQjfFi8Kk9Er1Df4SUihNqIkuQi0H422V-U0Z4wH6XnrP5D7nwC29R-BEzCmMpkr0bo_oBqmHXQr8"/><div class="hidden md:flex flex-col text-left"><span class="font-label-default text-label-default text-on-surface leading-tight">Elena Rostov</span><span class="font-meta-default text-meta-default text-outline leading-tight">Talent Lead</span></div><span class="material-symbols-outlined text-outline text-[18px]">expand_more</span></div></div></header><main class="relative pt-16 bg-background min-h-screen"><div class="max-w-[1280px] mx-auto p-space-xl"><div class="flex flex-col w-full">
+<div class="w-full max-w-[1240px] mx-auto pb-space-xl">
+<!-- Top Action & Navigation Header Bar -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md mb-space-lg">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5 font-meta-default text-meta-default text-outline mb-1">
+<span class="hover:text-on-surface cursor-pointer transition-colors">Candidates</span>
+<span>/</span>
+<span class="font-code-mono text-code-mono text-outline hover:text-on-surface cursor-pointer transition-colors">REQ-4092</span>
+<span>/</span>
+<span class="font-meta-medium text-meta-medium text-on-surface">Candidate 04</span>
+</div>
+<div class="flex items-baseline gap-space-sm">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Candidate 04</h1>
+<span class="font-code-mono text-[11px] px-1.5 py-0.5 rounded bg-surface-container-high text-secondary uppercase font-medium">Verified PDF</span>
+</div>
+<p class="font-meta-default text-meta-default text-secondary mt-0.5">
+          Source: <span class="font-code-mono text-code-mono text-on-surface">candidate_04.pdf</span> (2 pages) <span class="text-outline-variant mx-1">•</span> Machine Learning Intern
+        </p>
+</div>
+<div class="flex items-center gap-2 flex-wrap">
+<button class="inline-flex items-center gap-1.5 h-8 px-3 rounded-[6px] bg-surface-container-lowest border border-outline-variant/50 font-label-default text-label-default text-on-surface hover:bg-surface-container-low transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">arrow_back</span>
+<span>Back to Candidate Ranking</span>
+</button>
+<button class="inline-flex items-center gap-1.5 h-8 px-3 rounded-[6px] bg-surface-container-lowest border border-outline-variant/50 font-label-default text-label-default text-on-surface hover:bg-surface-container-low transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">picture_as_pdf</span>
+<span>Original Resume (PDF)</span>
+</button>
+<button class="inline-flex items-center gap-1.5 h-8 px-3.5 rounded-[6px] bg-primary text-on-primary font-label-default text-label-default hover:bg-primary-container transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px] text-on-primary">download</span>
+<span>Export Candidate Dossier</span>
+</button>
+</div>
+</div>
+<!-- 12-Column Content Workbench: 8 cols (70%) Main / 4 cols (30%) Sidebar -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- MAIN COLUMN: 8 Columns -->
+<div class="lg:col-span-8 flex flex-col gap-space-lg min-w-0">
+<!-- 1. MATCH ANALYSIS METRICS ROW -->
+<div class="bg-surface-container-lowest border border-outline-variant/40 rounded-[6px] p-5 shadow-sm">
+<div class="flex items-center justify-between pb-3.5 mb-4 border-b border-outline-variant/20">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-on-surface">tune</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Match Analysis</h2>
+</div>
+<div class="inline-flex items-center gap-1.5 font-code-mono text-code-mono text-secondary">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+              Deterministic Model v2.4
+            </div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+<!-- Metric 1: Match Score -->
+<div class="bg-surface-container-lowest p-3.5 rounded-[6px] border border-outline-variant/30 flex flex-col justify-between">
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-table-header text-table-header text-secondary uppercase tracking-wider">Overall Match</span>
+<span class="font-code-mono text-[11px] px-1 rounded bg-secondary-container text-on-secondary-container">Rank #2</span>
+</div>
+<div class="flex items-baseline gap-1 my-1">
+<span class="font-headline-lg text-[28px] leading-tight font-semibold text-on-surface">84%</span>
+<span class="font-meta-default text-meta-default text-outline">/ 100</span>
+</div>
+<p class="font-meta-default text-[11px] text-outline mt-1 leading-snug">
+                Formula: 70% Text + 30% Skill
+              </p>
+</div>
+<!-- Metric 2: JD Similarity -->
+<div class="bg-surface-container-lowest p-3.5 rounded-[6px] border border-outline-variant/30 flex flex-col justify-between">
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-table-header text-table-header text-secondary uppercase tracking-wider">JD Similarity</span>
+<span class="material-symbols-outlined text-[16px] text-outline">analytics</span>
+</div>
+<div class="flex items-baseline gap-1 my-1">
+<span class="font-headline-lg text-[28px] leading-tight font-semibold text-on-surface">82%</span>
+<span class="font-meta-default text-meta-default text-outline">dense</span>
+</div>
+<p class="font-meta-default text-[11px] text-outline mt-1 leading-snug">
+                Vector TF-IDF similarity
+              </p>
+</div>
+<!-- Metric 3: Skill Coverage -->
+<div class="bg-surface-container-lowest p-3.5 rounded-[6px] border border-outline-variant/30 flex flex-col justify-between">
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-table-header text-table-header text-secondary uppercase tracking-wider">Skill Coverage</span>
+<span class="font-code-mono text-[11px] text-secondary font-medium">5/7 Target</span>
+</div>
+<div class="flex items-baseline gap-1 my-1">
+<span class="font-headline-lg text-[28px] leading-tight font-semibold text-on-surface">90%</span>
+<span class="font-meta-default text-meta-default text-outline">core</span>
+</div>
+<p class="font-meta-default text-[11px] text-outline mt-1 leading-snug">
+                5 of 5 required skills detected
+              </p>
+</div>
+</div>
+<div class="flex items-start gap-2 pt-2 border-t border-outline-variant/20">
+<span class="material-symbols-outlined text-[15px] text-outline mt-0.5">info</span>
+<p class="font-meta-default text-[11px] leading-normal text-outline">
+              Match score reflects similarity between the job description and resume content using the configured scoring methodology.
+            </p>
+</div>
+</div>
+<!-- 2. SKILLS BREAKDOWN SECTION -->
+<div class="bg-surface-container-lowest border border-outline-variant/40 rounded-[6px] p-5 shadow-sm">
+<div class="flex items-center justify-between pb-3.5 mb-4 border-b border-outline-variant/20">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-on-surface">checklist</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Skills Breakdown</h2>
+</div>
+<span class="font-meta-default text-meta-default text-secondary">Verified by Semantic Parser</span>
+</div>
+<div class="space-y-4">
+<!-- Matched Skills Group -->
+<div>
+<div class="flex items-center gap-2 mb-2.5">
+<span class="w-1.5 h-1.5 rounded-full bg-on-background"></span>
+<span class="font-table-header text-table-header uppercase text-secondary tracking-wider">Matched Skills (5)</span>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="inline-flex items-center gap-1.5 h-[26px] px-2.5 rounded-[4px] bg-surface-container-low border border-outline-variant/50 text-on-surface font-label-default text-[12px]">
+<span class="material-symbols-outlined text-[14px] text-on-surface">check</span>
+                  Python
+                </span>
+<span class="inline-flex items-center gap-1.5 h-[26px] px-2.5 rounded-[4px] bg-surface-container-low border border-outline-variant/50 text-on-surface font-label-default text-[12px]">
+<span class="material-symbols-outlined text-[14px] text-on-surface">check</span>
+                  SQL
+                </span>
+<span class="inline-flex items-center gap-1.5 h-[26px] px-2.5 rounded-[4px] bg-surface-container-low border border-outline-variant/50 text-on-surface font-label-default text-[12px]">
+<span class="material-symbols-outlined text-[14px] text-on-surface">check</span>
+                  Machine Learning
+                </span>
+<span class="inline-flex items-center gap-1.5 h-[26px] px-2.5 rounded-[4px] bg-surface-container-low border border-outline-variant/50 text-on-surface font-label-default text-[12px]">
+<span class="material-symbols-outlined text-[14px] text-on-surface">check</span>
+                  Scikit-learn
+                </span>
+<span class="inline-flex items-center gap-1.5 h-[26px] px-2.5 rounded-[4px] bg-surface-container-low border border-outline-variant/50 text-on-surface font-label-default text-[12px]">
+<span class="material-symbols-outlined text-[14px] text-on-surface">check</span>
+                  Git
+                </span>
+</div>
+</div>
+<!-- Not Found in Resume Group -->
+<div>
+<div class="flex items-center gap-2 mb-2.5">
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+<span class="font-table-header text-table-header uppercase text-outline tracking-wider">Not Found In Resume (2)</span>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="inline-flex items-center h-[26px] px-2.5 rounded-[4px] bg-surface-container-lowest border border-outline-variant/40 text-outline font-label-default text-[12px]">
+                  Docker
+                </span>
+<span class="inline-flex items-center h-[26px] px-2.5 rounded-[4px] bg-surface-container-lowest border border-outline-variant/40 text-outline font-label-default text-[12px]">
+                  AWS
+                </span>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/20 flex items-center gap-2 text-outline">
+<span class="material-symbols-outlined text-[15px]">verified_user</span>
+<p class="font-meta-default text-[11px] leading-snug">
+              Absence of a keyword from the submitted resume does not confirm lack of candidate competency.
+            </p>
+</div>
+</div>
+<!-- 3. REQUIREMENT EVIDENCE (CORE DIFFERENTIATOR) -->
+<div class="bg-surface-container-lowest border border-outline-variant/40 rounded-[6px] overflow-hidden shadow-sm">
+<div class="p-4 border-b border-outline-variant/30 flex items-center justify-between bg-surface-container-lowest">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-on-surface">fact_check</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Requirement Evidence</h2>
+</div>
+<span class="font-code-mono text-code-mono text-secondary">7 Requirements Analyzed</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant/30 h-8">
+<th class="py-2 px-4 font-table-header text-table-header text-secondary uppercase tracking-wider w-[180px]">Requirement</th>
+<th class="py-2 px-3 font-table-header text-table-header text-secondary uppercase tracking-wider w-[150px]">Status</th>
+<th class="py-2 px-4 font-table-header text-table-header text-secondary uppercase tracking-wider">Exact Resume Citation / Evidence</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/20 font-body-default text-body-default">
+<!-- Python Row -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-3 px-4 align-top font-label-default text-label-default text-on-surface">
+                    Python
+                  </td>
+<td class="py-3 px-3 align-top whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-[4px] bg-surface-container-high border border-outline-variant/30 text-on-surface font-meta-medium text-[11px]">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                      Matched
+                    </span>
+</td>
+<td class="py-3 px-4 align-top">
+<p class="font-body-default text-[13px] text-on-surface leading-relaxed mb-1">
+                      “Developed high-throughput data processing pipelines using Python and Pandas for unstructured log streams.”
+                    </p>
+<span class="inline-flex items-center gap-1 font-code-mono text-[11px] text-secondary">
+<span class="material-symbols-outlined text-[13px]">description</span>
+                      Source: Page 1, Experience
+                    </span>
+</td>
+</tr>
+<!-- SQL Row -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-3 px-4 align-top font-label-default text-label-default text-on-surface">
+                    SQL
+                  </td>
+<td class="py-3 px-3 align-top whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-[4px] bg-surface-container-high border border-outline-variant/30 text-on-surface font-meta-medium text-[11px]">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                      Matched
+                    </span>
+</td>
+<td class="py-3 px-4 align-top">
+<p class="font-body-default text-[13px] text-on-surface leading-relaxed mb-1">
+                      “Constructed and optimized complex SQL queries for relational analytical warehousing across 2M+ records.”
+                    </p>
+<span class="inline-flex items-center gap-1 font-code-mono text-[11px] text-secondary">
+<span class="material-symbols-outlined text-[13px]">description</span>
+                      Source: Page 1, Experience
+                    </span>
+</td>
+</tr>
+<!-- Machine Learning Row -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-3 px-4 align-top font-label-default text-label-default text-on-surface">
+                    Machine Learning
+                  </td>
+<td class="py-3 px-3 align-top whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-[4px] bg-surface-container-high border border-outline-variant/30 text-on-surface font-meta-medium text-[11px]">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                      Matched
+                    </span>
+</td>
+<td class="py-3 px-4 align-top">
+<p class="font-body-default text-[13px] text-on-surface leading-relaxed mb-1">
+                      “Trained supervised classification and regression models evaluating accuracy and precision curves.”
+                    </p>
+<span class="inline-flex items-center gap-1 font-code-mono text-[11px] text-secondary">
+<span class="material-symbols-outlined text-[13px]">description</span>
+                      Source: Page 2, Projects
+                    </span>
+</td>
+</tr>
+<!-- Scikit-learn Row -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-3 px-4 align-top font-label-default text-label-default text-on-surface">
+                    Scikit-learn
+                  </td>
+<td class="py-3 px-3 align-top whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-[4px] bg-surface-container-high border border-outline-variant/30 text-on-surface font-meta-medium text-[11px]">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                      Matched
+                    </span>
+</td>
+<td class="py-3 px-4 align-top">
+<p class="font-body-default text-[13px] text-on-surface leading-relaxed mb-1">
+                      “Implemented clustering and predictive classification modules leveraging Scikit-learn and NumPy.”
+                    </p>
+<span class="inline-flex items-center gap-1 font-code-mono text-[11px] text-secondary">
+<span class="material-symbols-outlined text-[13px]">description</span>
+                      Source: Page 2, Projects
+                    </span>
+</td>
+</tr>
+<!-- Git Row -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-3 px-4 align-top font-label-default text-label-default text-on-surface">
+                    Git
+                  </td>
+<td class="py-3 px-3 align-top whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-[4px] bg-surface-container-high border border-outline-variant/30 text-on-surface font-meta-medium text-[11px]">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                      Matched
+                    </span>
+</td>
+<td class="py-3 px-4 align-top">
+<p class="font-body-default text-[13px] text-on-surface leading-relaxed mb-1">
+                      “Maintained team repositories on GitHub, managing PR reviews and version tagging workflows.”
+                    </p>
+<span class="inline-flex items-center gap-1 font-code-mono text-[11px] text-secondary">
+<span class="material-symbols-outlined text-[13px]">description</span>
+                      Source: Page 2, Technical Skills
+                    </span>
+</td>
+</tr>
+<!-- Docker Row (Not Found) -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-3 px-4 align-top font-label-default text-label-default text-outline">
+                    Docker
+                  </td>
+<td class="py-3 px-3 align-top whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-[4px] bg-surface-container-lowest border border-outline-variant/40 text-outline font-meta-medium text-[11px]">
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+                      Not found in resume
+                    </span>
+</td>
+<td class="py-3 px-4 align-top">
+<span class="font-code-mono text-[12px] text-outline leading-relaxed block">
+                      — (No explicit mention detected in submitted resume document)
+                    </span>
+</td>
+</tr>
+<!-- AWS Row (Not Found) -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-3 px-4 align-top font-label-default text-label-default text-outline">
+                    AWS
+                  </td>
+<td class="py-3 px-3 align-top whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-[4px] bg-surface-container-lowest border border-outline-variant/40 text-outline font-meta-medium text-[11px]">
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+                      Not found in resume
+                    </span>
+</td>
+<td class="py-3 px-4 align-top">
+<span class="font-code-mono text-[12px] text-outline leading-relaxed block">
+                      — (No explicit mention detected in submitted resume document)
+                    </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- 4. ANALYSIS SUMMARY / RECRUITER NOTES -->
+<div class="bg-surface-container-lowest border border-outline-variant/40 rounded-[6px] p-5 shadow-sm">
+<div class="flex items-center justify-between pb-3.5 mb-3 border-b border-outline-variant/20">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-on-surface">subject</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Objective Analysis Summary</h2>
+</div>
+<span class="font-code-mono text-[11px] uppercase tracking-wider text-outline">Audit Safe</span>
+</div>
+<p class="font-body-default text-body-default text-secondary leading-relaxed">
+            The submitted resume demonstrates verified skill overlap with core job criteria including Python, SQL, Git, and Scikit-learn, supported by documented project implementation evidence. Cloud containerization tools (Docker, AWS) were not detected in the provided resume document.
+          </p>
+</div>
+</div>
+<!-- RIGHT SIDEBAR: 4 Columns (30% Persistent Panel) -->
+<div class="lg:col-span-4 flex flex-col gap-space-md">
+<div class="bg-surface-container-lowest border border-outline-variant/40 rounded-[6px] p-5 shadow-sm space-y-5">
+<div class="flex items-center justify-between pb-3 border-b border-outline-variant/20">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-on-surface">account_circle</span>
+<h3 class="font-headline-sm text-[15px] font-semibold text-on-surface">Extracted Resume Profile</h3>
+</div>
+<span class="font-code-mono text-code-mono text-outline">OCR v1.2</span>
+</div>
+<!-- Section: Work Experience -->
+<div class="space-y-2.5">
+<div class="flex items-center justify-between">
+<span class="font-table-header text-table-header uppercase text-secondary tracking-wider">Work Experience</span>
+<span class="font-code-mono text-[11px] text-outline">2 roles</span>
+</div>
+<div class="space-y-2 border-l border-outline-variant/40 pl-3 ml-1">
+<div>
+<p class="font-label-default text-label-default text-on-surface leading-snug">Machine Learning Intern</p>
+<div class="flex items-center justify-between text-secondary mt-0.5">
+<span class="font-meta-default text-meta-default">ABC Technologies</span>
+<span class="font-code-mono text-[11px] text-outline">2025–2026</span>
+</div>
+</div>
+<div class="pt-1.5">
+<p class="font-label-default text-label-default text-on-surface leading-snug">Data Intern</p>
+<div class="flex items-center justify-between text-secondary mt-0.5">
+<span class="font-meta-default text-meta-default">FinTech Solutions</span>
+<span class="font-code-mono text-[11px] text-outline">Summer 2024</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: Verified Projects -->
+<div class="space-y-2.5 pt-2 border-t border-outline-variant/20">
+<div class="flex items-center justify-between">
+<span class="font-table-header text-table-header uppercase text-secondary tracking-wider">Verified Projects</span>
+<span class="font-code-mono text-[11px] text-outline">2 items</span>
+</div>
+<div class="space-y-2.5">
+<div class="p-2.5 rounded-[4px] bg-surface-container-low border border-outline-variant/30">
+<p class="font-label-default text-label-default text-on-surface">Fraud Detection System</p>
+<span class="font-meta-default text-meta-default text-secondary mt-0.5 block">Tech: Python, Scikit-learn</span>
+</div>
+<div class="p-2.5 rounded-[4px] bg-surface-container-low border border-outline-variant/30">
+<p class="font-label-default text-label-default text-on-surface">Resume Classification Model</p>
+<span class="font-meta-default text-meta-default text-secondary mt-0.5 block">Tech: TF-IDF, NLP</span>
+</div>
+</div>
+</div>
+<!-- Section: Education -->
+<div class="space-y-2 pt-2 border-t border-outline-variant/20">
+<span class="font-table-header text-table-header uppercase text-secondary tracking-wider block">Education</span>
+<div>
+<p class="font-label-default text-label-default text-on-surface">B.Tech in Computer Science &amp; Engineering</p>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-code-mono text-code-mono text-secondary">GPA 3.8 / 4.0</span>
+<span class="text-outline-variant">•</span>
+<span class="font-meta-default text-meta-default text-outline">Accredited</span>
+</div>
+</div>
+</div>
+<!-- Section: Certifications -->
+<div class="space-y-2 pt-2 border-t border-outline-variant/20">
+<span class="font-table-header text-table-header uppercase text-secondary tracking-wider block">Certifications</span>
+<div class="flex items-center gap-1.5 text-outline">
+<span class="material-symbols-outlined text-[15px]">not_interested</span>
+<span class="font-meta-default text-meta-default italic">Not detected (Honest extraction)</span>
+</div>
+</div>
+<!-- Recruiter Notes Form Field -->
+<div class="space-y-2.5 pt-3 border-t border-outline-variant/30">
+<div class="flex items-center justify-between">
+<label class="font-table-header text-table-header uppercase text-on-surface tracking-wider" for="recruiterNotes">
+                Recruiter Evaluation Notes
+              </label>
+<span class="font-code-mono text-[10px] text-outline" id="saveStatus">Auto-sync on</span>
+</div>
+<textarea class="w-full p-2.5 rounded-[6px] border border-outline-variant/50 bg-surface-container-lowest font-body-default text-body-default text-on-surface placeholder:text-outline focus:outline-none focus:border-on-surface focus:ring-1 focus:ring-on-surface transition-all resize-none" id="recruiterNotes" placeholder="Add recruiter evaluation notes here..." rows="4">Candidate demonstrated solid foundations during technical pre-screen. Code repo inspected on GitHub; well-structured modular code.</textarea>
+<div class="flex items-center justify-between pt-1">
+<span class="font-meta-default text-[11px] text-outline">Visible to internal hiring panel</span>
+<button class="inline-flex items-center gap-1 h-7 px-3 rounded-[4px] bg-primary text-on-primary font-label-default text-[12px] hover:bg-primary-container transition-colors" id="saveNoteBtn" type="button">
+<span class="material-symbols-outlined text-[14px]">save</span>
+<span>Save Note</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Candidate Meta Document Snapshot Card -->
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-[6px] p-4 text-secondary flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-container-low border border-outline-variant/30 flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+<div>
+<p class="font-label-default text-label-default text-on-surface leading-tight">Checksum Verified</p>
+<span class="font-code-mono text-[10px] text-outline">SHA256: 8a7c...3f01</span>
+</div>
+</div>
+<span class="font-meta-default text-[11px] text-secondary">Logged</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function initRecruiterNotes() {
+    const saveBtn = document.getElementById('saveNoteBtn');
+    const noteArea = document.getElementById('recruiterNotes');
+    const statusText = document.getElementById('saveStatus');
+
+    if (!saveBtn || !noteArea || !statusText) return;
+
+    saveBtn.addEventListener('click', function() {
+      const originalText = saveBtn.innerHTML;
+      saveBtn.innerHTML = '<span class="material-symbols-outlined text-[14px]">check</span><span>Saved</span>';
+      saveBtn.classList.add('opacity-90');
+      statusText.textContent = 'Saved just now';
+      statusText.classList.remove('text-outline');
+      statusText.classList.add('text-secondary');
+
+      setTimeout(() => {
+        saveBtn.innerHTML = originalText;
+        saveBtn.classList.remove('opacity-90');
+      }, 1800);
+    });
+  })();
+</script></div></main></div></body></html>

@@ -1,0 +1,26 @@
+Job Title: Machine Learning Engineer
+
+Role Overview:
+We are seeking an ML Engineer to develop explainable NLP matching pipelines and entity extraction models.
+
+Required Skills:
+• Python
+• PyTorch
+• scikit-learn
+• NLP
+• Pandas
+
+Preferred Skills:
+• FastAPI
+• Docker
+• MLOps
+• spaCy
+
+Responsibilities:
+• Build text classification and TF-IDF similarity algorithms.
+• Evaluate model performance against benchmark candidate datasets.
+• Containerize machine learning inference workloads.
+
+Qualifications:
+• Master's or Bachelor's degree in Computer Science, Data Science, or related field.
+• Hands-on experience with classical NLP and deep learning frameworks.

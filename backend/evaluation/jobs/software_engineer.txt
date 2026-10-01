@@ -1,0 +1,26 @@
+Job Title: Senior Backend Software Engineer
+
+Role Overview:
+ResumeIQ Engineering is seeking a Senior Backend Engineer to build robust recruitment intelligence microservices.
+
+Required Skills:
+• Python
+• FastAPI
+• PostgreSQL
+• Docker
+
+Preferred Skills:
+• Redis
+• Kubernetes
+• AWS
+• CI/CD
+
+Responsibilities:
+• Design and maintain RESTful API endpoints for candidate ingestion.
+• Optimize relational queries and database schema in PostgreSQL.
+• Deploy containerized microservices to cloud environments.
+• Implement unit and integration tests to ensure platform reliability.
+
+Qualifications:
+• 5+ years of software engineering experience.
+• Strong foundation in algorithms, system design, and database architecture.

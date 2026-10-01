@@ -1,0 +1,26 @@
+Job Title: Cloud & DevOps Engineer
+
+Role Overview:
+ResumeIQ Platform Operations is seeking a Cloud & DevOps Engineer to scale our automated infrastructure and deployment pipelines.
+
+Required Skills:
+• Docker
+• Kubernetes
+• AWS
+• CI/CD
+• Linux
+
+Preferred Skills:
+• Python
+• Bash
+• Terraform
+
+Responsibilities:
+• Maintain production Kubernetes clusters and Dockerized microservice workloads.
+• Build automated continuous integration and deployment (CI/CD) pipelines.
+• Provision and govern cloud resources on AWS.
+• Monitor system reliability and write automation scripts.
+
+Qualifications:
+• 3+ years of experience in DevOps or Cloud Infrastructure engineering.
+• Deep proficiency with Linux operating systems and container lifecycle management.

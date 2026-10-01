@@ -1,0 +1,164 @@
+{
+  "version": "1.0.0",
+  "description": "Ground truth canonical technical skills present in evaluation resumes.",
+  "taxonomy_policy": "Canonical skills matching controlled taxonomy, non-inferred, verifiable in source text.",
+  "resumes": {
+    "candidate_alpha.pdf": {
+      "resume_id": "candidate_alpha",
+      "filename": "candidate_alpha.pdf",
+      "ground_truth_skills": [
+        "Machine Learning",
+        "NLP",
+        "Python",
+        "SQL",
+        "C++",
+        "scikit-learn",
+        "PyTorch",
+        "Pandas",
+        "NumPy",
+        "spaCy",
+        "Docker",
+        "Linux",
+        "Git",
+        "Microservices",
+        "CI/CD"
+      ],
+      "notes": "Mentions C++ (not C), ML, NLP, PyTorch, scikit-learn, Pandas, spaCy."
+    },
+    "candidate_beta.pdf": {
+      "resume_id": "candidate_beta",
+      "filename": "candidate_beta.pdf",
+      "ground_truth_skills": [
+        "Python",
+        "Go",
+        "SQL",
+        "FastAPI",
+        "Flask",
+        "Django",
+        "PostgreSQL",
+        "Redis",
+        "MySQL",
+        "Docker",
+        "Kubernetes",
+        "AWS",
+        "Git",
+        "REST API"
+      ],
+      "notes": "High-throughput backend engineer with Python, FastAPI, relational databases, containers."
+    },
+    "candidate_gamma.pdf": {
+      "resume_id": "candidate_gamma",
+      "filename": "candidate_gamma.pdf",
+      "ground_truth_skills": [
+        "TypeScript",
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "React",
+        "Next.js",
+        "Redux",
+        "Tailwind CSS",
+        "Jest",
+        "Cypress",
+        "GraphQL"
+      ],
+      "notes": "Frontend specialist focused on React/TypeScript ecosystem."
+    },
+    "candidate_delta.pdf": {
+      "resume_id": "candidate_delta",
+      "filename": "candidate_delta.pdf",
+      "ground_truth_skills": [
+        "Python",
+        "SQL",
+        "Pandas",
+        "NumPy",
+        "scikit-learn",
+        "Tableau",
+        "Git"
+      ],
+      "notes": "Data analyst / junior ML practitioner with tabular data skills."
+    },
+    "candidate_epsilon.pdf": {
+      "resume_id": "candidate_epsilon",
+      "filename": "candidate_epsilon.pdf",
+      "ground_truth_skills": [
+        "AWS",
+        "Linux",
+        "Docker",
+        "Kubernetes",
+        "CI/CD",
+        "Terraform",
+        "Bash",
+        "Git",
+        "Python"
+      ],
+      "notes": "DevOps infrastructure architect with cloud orchestration and IaC skills."
+    },
+    "candidate_zeta.pdf": {
+      "resume_id": "candidate_zeta",
+      "filename": "candidate_zeta.pdf",
+      "ground_truth_skills": [
+        "Python",
+        "SQL",
+        "PostgreSQL",
+        "Redis",
+        "Apache Spark",
+        "Pandas",
+        "Docker",
+        "Linux",
+        "Git"
+      ],
+      "notes": "Data platform engineer with Spark, PostgreSQL, Redis, and Python."
+    },
+    "candidate_eta.pdf": {
+      "resume_id": "candidate_eta",
+      "filename": "candidate_eta.pdf",
+      "ground_truth_skills": [
+        "JavaScript",
+        "TypeScript",
+        "HTML",
+        "CSS",
+        "React",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "REST API",
+        "Git"
+      ],
+      "notes": "Full stack JavaScript/TypeScript web engineer."
+    },
+    "candidate_theta.pdf": {
+      "resume_id": "candidate_theta",
+      "filename": "candidate_theta.pdf",
+      "ground_truth_skills": [
+        "C++",
+        "Rust",
+        "Linux",
+        "Git",
+        "Bash"
+      ],
+      "notes": "Low-level native systems engineer (C++, Rust). Tests C/C++ boundary."
+    },
+    "candidate_iota.pdf": {
+      "resume_id": "candidate_iota",
+      "filename": "candidate_iota.pdf",
+      "ground_truth_skills": [
+        "Python",
+        "PyTorch",
+        "NLP",
+        "spaCy",
+        "scikit-learn",
+        "Deep Learning",
+        "Pandas",
+        "NumPy"
+      ],
+      "notes": "Senior NLP research scientist with deep learning and transformer background."
+    },
+    "scanned_image_resume.pdf": {
+      "resume_id": "scanned_image_resume",
+      "filename": "scanned_image_resume.pdf",
+      "ground_truth_skills": [],
+      "notes": "Scanned bitmap image with zero extractable text stream. True skills = empty."
+    }
+  }
+}

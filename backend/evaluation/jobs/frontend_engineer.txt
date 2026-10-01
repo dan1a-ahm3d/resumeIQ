@@ -1,0 +1,27 @@
+Job Title: Senior Frontend Engineer
+
+Role Overview:
+ResumeIQ Design Systems is seeking a Senior Frontend Engineer to create accessible, elegant recruitment intelligence interfaces.
+
+Required Skills:
+• React
+• TypeScript
+• JavaScript
+• HTML
+• CSS
+
+Preferred Skills:
+• Next.js
+• Tailwind CSS
+• Redux
+• Jest
+
+Responsibilities:
+• Develop reusable UI components and client-side web application views in React.
+• Maintain type safety and codebase scalability using TypeScript.
+• Translate design specifications into semantic HTML and modern responsive CSS.
+• Integrate backend REST APIs and write automated tests.
+
+Qualifications:
+• 4+ years of professional web application frontend development experience.
+• Strong mastery of modern ECMAScript, component patterns, and state management.

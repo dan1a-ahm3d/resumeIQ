@@ -1,0 +1,187 @@
+{
+  "version": "1.0.0",
+  "description": "Ground truth relevance annotations for multi-candidate ranking evaluations.",
+  "relevance_scale": {
+    "2": "Strongly relevant: Candidate directly satisfies role domain and primary required skills.",
+    "1": "Partially relevant: Candidate possesses adjacent skills or a partial subset of required competencies.",
+    "0": "Not relevant: Candidate belongs to an unrelated engineering domain or lacks core requirements."
+  },
+  "scenarios": [
+    {
+      "scenario_id": "ml_engineer_ranking",
+      "job_filename": "ml_engineer.txt",
+      "job_title": "Machine Learning Engineer",
+      "description": "Evaluation of 6 candidate resumes against Machine Learning Engineer requisition.",
+      "candidates": [
+        {
+          "filename": "candidate_alpha.pdf",
+          "candidate_id": "candidate_alpha",
+          "ground_truth_relevance": 2,
+          "rationale": "Strong match: Full 100% required skill coverage (Python, PyTorch, scikit-learn, NLP, Pandas) plus Docker and spaCy."
+        },
+        {
+          "filename": "candidate_iota.pdf",
+          "candidate_id": "candidate_iota",
+          "ground_truth_relevance": 2,
+          "rationale": "Strong match: Complete NLP/ML required skill set (Python, PyTorch, scikit-learn, NLP, Pandas) plus Deep Learning and spaCy."
+        },
+        {
+          "filename": "candidate_delta.pdf",
+          "candidate_id": "candidate_delta",
+          "ground_truth_relevance": 1,
+          "rationale": "Partial match: Data analyst with Python, scikit-learn, Pandas (3/5 required); lacks PyTorch and NLP."
+        },
+        {
+          "filename": "candidate_beta.pdf",
+          "candidate_id": "candidate_beta",
+          "ground_truth_relevance": 1,
+          "rationale": "Partial match: Backend architect with Python, Docker, and FastAPI, but lacks core ML/NLP frameworks."
+        },
+        {
+          "filename": "candidate_gamma.pdf",
+          "candidate_id": "candidate_gamma",
+          "ground_truth_relevance": 0,
+          "rationale": "Not relevant: Frontend TypeScript/React engineer with zero ML/NLP competencies."
+        },
+        {
+          "filename": "candidate_theta.pdf",
+          "candidate_id": "candidate_theta",
+          "ground_truth_relevance": 0,
+          "rationale": "Not relevant: Embedded systems C++/Rust developer with no ML overlap."
+        }
+      ]
+    },
+    {
+      "scenario_id": "software_engineer_ranking",
+      "job_filename": "software_engineer.txt",
+      "job_title": "Senior Backend Software Engineer",
+      "description": "Evaluation of 6 candidate resumes against Senior Backend Engineer requisition.",
+      "candidates": [
+        {
+          "filename": "candidate_beta.pdf",
+          "candidate_id": "candidate_beta",
+          "ground_truth_relevance": 2,
+          "rationale": "Strong match: Has all 4 required skills (Python, FastAPI, PostgreSQL, Docker) plus Redis, Kubernetes, AWS."
+        },
+        {
+          "filename": "candidate_zeta.pdf",
+          "candidate_id": "candidate_zeta",
+          "ground_truth_relevance": 1,
+          "rationale": "Partial match: Data platform engineer with Python, PostgreSQL, Docker, Redis; missing FastAPI."
+        },
+        {
+          "filename": "candidate_epsilon.pdf",
+          "candidate_id": "candidate_epsilon",
+          "ground_truth_relevance": 1,
+          "rationale": "Partial match: DevOps engineer with Docker, Python, Kubernetes, AWS, CI/CD; missing FastAPI, PostgreSQL."
+        },
+        {
+          "filename": "candidate_alpha.pdf",
+          "candidate_id": "candidate_alpha",
+          "ground_truth_relevance": 1,
+          "rationale": "Partial match: ML engineer with Python, Docker, CI/CD, SQL; missing FastAPI, PostgreSQL."
+        },
+        {
+          "filename": "candidate_gamma.pdf",
+          "candidate_id": "candidate_gamma",
+          "ground_truth_relevance": 0,
+          "rationale": "Not relevant: Frontend React/CSS developer."
+        },
+        {
+          "filename": "candidate_theta.pdf",
+          "candidate_id": "candidate_theta",
+          "ground_truth_relevance": 0,
+          "rationale": "Not relevant: Embedded C++/Rust developer."
+        }
+      ]
+    },
+    {
+      "scenario_id": "devops_engineer_ranking",
+      "job_filename": "devops_engineer.txt",
+      "job_title": "Cloud & DevOps Engineer",
+      "description": "Evaluation of 6 candidate resumes against Cloud & DevOps Engineer requisition.",
+      "candidates": [
+        {
+          "filename": "candidate_epsilon.pdf",
+          "candidate_id": "candidate_epsilon",
+          "ground_truth_relevance": 2,
+          "rationale": "Strong match: All 5 required skills (Docker, Kubernetes, AWS, CI/CD, Linux) plus Python, Bash, Terraform."
+        },
+        {
+          "filename": "candidate_beta.pdf",
+          "candidate_id": "candidate_beta",
+          "ground_truth_relevance": 1,
+          "rationale": "Partial match: Has Docker, Kubernetes, AWS, Python; missing CI/CD, Linux."
+        },
+        {
+          "filename": "candidate_alpha.pdf",
+          "candidate_id": "candidate_alpha",
+          "ground_truth_relevance": 1,
+          "rationale": "Partial match: Has Docker, Linux, CI/CD, Python; missing Kubernetes, AWS."
+        },
+        {
+          "filename": "candidate_theta.pdf",
+          "candidate_id": "candidate_theta",
+          "ground_truth_relevance": 0,
+          "rationale": "Not relevant: Embedded developer with Linux and Bash; lacks cloud and containerization."
+        },
+        {
+          "filename": "candidate_delta.pdf",
+          "candidate_id": "candidate_delta",
+          "ground_truth_relevance": 0,
+          "rationale": "Not relevant: Data analyst."
+        },
+        {
+          "filename": "candidate_gamma.pdf",
+          "candidate_id": "candidate_gamma",
+          "ground_truth_relevance": 0,
+          "rationale": "Not relevant: Frontend developer."
+        }
+      ]
+    },
+    {
+      "scenario_id": "frontend_engineer_ranking",
+      "job_filename": "frontend_engineer.txt",
+      "job_title": "Senior Frontend Engineer",
+      "description": "Evaluation of 6 candidate resumes against Senior Frontend Engineer requisition.",
+      "candidates": [
+        {
+          "filename": "candidate_gamma.pdf",
+          "candidate_id": "candidate_gamma",
+          "ground_truth_relevance": 2,
+          "rationale": "Strong match: All 5 required skills (React, TypeScript, JavaScript, HTML, CSS) plus Next.js, Tailwind CSS, Redux, Jest."
+        },
+        {
+          "filename": "candidate_eta.pdf",
+          "candidate_id": "candidate_eta",
+          "ground_truth_relevance": 2,
+          "rationale": "Strong match: All 5 required skills (React, TypeScript, JavaScript, HTML, CSS) plus Node.js, REST API."
+        },
+        {
+          "filename": "candidate_beta.pdf",
+          "candidate_id": "candidate_beta",
+          "ground_truth_relevance": 0,
+          "rationale": "Not relevant: Python backend developer."
+        },
+        {
+          "filename": "candidate_alpha.pdf",
+          "candidate_id": "candidate_alpha",
+          "ground_truth_relevance": 0,
+          "rationale": "Not relevant: Machine Learning developer."
+        },
+        {
+          "filename": "candidate_delta.pdf",
+          "candidate_id": "candidate_delta",
+          "ground_truth_relevance": 0,
+          "rationale": "Not relevant: Data analyst."
+        },
+        {
+          "filename": "candidate_theta.pdf",
+          "candidate_id": "candidate_theta",
+          "ground_truth_relevance": 0,
+          "rationale": "Not relevant: Embedded systems developer."
+        }
+      ]
+    }
+  ]
+}

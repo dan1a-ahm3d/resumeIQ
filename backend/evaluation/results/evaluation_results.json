@@ -1,0 +1,1536 @@
+{
+  "timestamp": "2026-10-01T17:55:49.785035",
+  "summary": {
+    "resumes_evaluated": 10,
+    "job_scenarios_evaluated": 4,
+    "skill_extraction_micro_f1": 0.9724,
+    "skill_extraction_micro_precision": 0.9462,
+    "skill_extraction_micro_recall": 1.0,
+    "skill_extraction_macro_f1": 0.9722,
+    "ranking_mean_ndcg_at_5": 1.0
+  },
+  "skill_extraction": {
+    "per_resume": [
+      {
+        "tp": 15,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "true_positives": [
+          "C++",
+          "CI/CD",
+          "Docker",
+          "Git",
+          "Linux",
+          "Machine Learning",
+          "Microservices",
+          "NLP",
+          "NumPy",
+          "Pandas",
+          "PyTorch",
+          "Python",
+          "SQL",
+          "scikit-learn",
+          "spaCy"
+        ],
+        "false_positives": [],
+        "false_negatives": [],
+        "resume_id": "candidate_alpha",
+        "filename": "candidate_alpha.pdf",
+        "predicted_skills": [
+          "C++",
+          "CI/CD",
+          "Docker",
+          "Git",
+          "Linux",
+          "Machine Learning",
+          "Microservices",
+          "NLP",
+          "NumPy",
+          "Pandas",
+          "PyTorch",
+          "Python",
+          "SQL",
+          "scikit-learn",
+          "spaCy"
+        ],
+        "ground_truth_skills": [
+          "Machine Learning",
+          "NLP",
+          "Python",
+          "SQL",
+          "C++",
+          "scikit-learn",
+          "PyTorch",
+          "Pandas",
+          "NumPy",
+          "spaCy",
+          "Docker",
+          "Linux",
+          "Git",
+          "Microservices",
+          "CI/CD"
+        ],
+        "char_count": 1001,
+        "warnings": [],
+        "detected_evidence": [
+          {
+            "skill": "Machine Learning",
+            "matched_text": "Machine Learning",
+            "context": "Machine Learning Engineer | alpha@example.internal | New York, NY"
+          },
+          {
+            "skill": "NLP",
+            "matched_text": "NLP",
+            "context": "Applied Data Scientist and ML Engineer with 6 years of experience building predictive models and NLP applicatio"
+          },
+          {
+            "skill": "Python",
+            "matched_text": "Python",
+            "context": "Languages: Python, SQL, C++"
+          },
+          {
+            "skill": "SQL",
+            "matched_text": "SQL",
+            "context": "Languages: Python, SQL, C++"
+          },
+          {
+            "skill": "C++",
+            "matched_text": "C++",
+            "context": "Languages: Python, SQL, C++"
+          },
+          {
+            "skill": "scikit-learn",
+            "matched_text": "scikit-learn",
+            "context": "Frameworks & Libraries: PyTorch, scikit-learn, Pandas, NumPy, spaCy"
+          },
+          {
+            "skill": "PyTorch",
+            "matched_text": "PyTorch",
+            "context": "Frameworks & Libraries: PyTorch, scikit-learn, Pandas, NumPy, spaCy"
+          },
+          {
+            "skill": "Pandas",
+            "matched_text": "Pandas",
+            "context": "Frameworks & Libraries: PyTorch, scikit-learn, Pandas, NumPy, spaCy"
+          },
+          {
+            "skill": "NumPy",
+            "matched_text": "NumPy",
+            "context": "Frameworks & Libraries: PyTorch, scikit-learn, Pandas, NumPy, spaCy"
+          },
+          {
+            "skill": "spaCy",
+            "matched_text": "spaCy",
+            "context": "Frameworks & Libraries: PyTorch, scikit-learn, Pandas, NumPy, spaCy"
+          },
+          {
+            "skill": "Docker",
+            "matched_text": "Docker",
+            "context": "Tools & Infrastructure: Docker, Git, Linux, Jupyter"
+          },
+          {
+            "skill": "Linux",
+            "matched_text": "Linux",
+            "context": "Tools & Infrastructure: Docker, Git, Linux, Jupyter"
+          },
+          {
+            "skill": "Git",
+            "matched_text": "Git",
+            "context": "Tools & Infrastructure: Docker, Git, Linux, Jupyter"
+          },
+          {
+            "skill": "Microservices",
+            "matched_text": "microservices",
+            "context": "\u00b7 Containerized model serving microservices using Docker for on-premises deployment."
+          },
+          {
+            "skill": "CI/CD",
+            "matched_text": "CI/CD",
+            "context": "\u00b7 Implemented automated CI/CD unit testing for ML model evaluation."
+          }
+        ]
+      },
+      {
+        "tp": 14,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "true_positives": [
+          "AWS",
+          "Django",
+          "Docker",
+          "FastAPI",
+          "Flask",
+          "Git",
+          "Go",
+          "Kubernetes",
+          "MySQL",
+          "PostgreSQL",
+          "Python",
+          "REST API",
+          "Redis",
+          "SQL"
+        ],
+        "false_positives": [],
+        "false_negatives": [],
+        "resume_id": "candidate_beta",
+        "filename": "candidate_beta.pdf",
+        "predicted_skills": [
+          "AWS",
+          "Django",
+          "Docker",
+          "FastAPI",
+          "Flask",
+          "Git",
+          "Go",
+          "Kubernetes",
+          "MySQL",
+          "PostgreSQL",
+          "Python",
+          "REST API",
+          "Redis",
+          "SQL"
+        ],
+        "ground_truth_skills": [
+          "Python",
+          "Go",
+          "SQL",
+          "FastAPI",
+          "Flask",
+          "Django",
+          "PostgreSQL",
+          "Redis",
+          "MySQL",
+          "Docker",
+          "Kubernetes",
+          "AWS",
+          "Git",
+          "REST API"
+        ],
+        "char_count": 789,
+        "warnings": [],
+        "detected_evidence": [
+          {
+            "skill": "REST API",
+            "matched_text": "REST APIs",
+            "context": "Backend software architect with 7 years of experience engineering high-throughput REST APIs and distributed m"
+          },
+          {
+            "skill": "Python",
+            "matched_text": "Python",
+            "context": "Languages: Python, Go, SQL"
+          },
+          {
+            "skill": "SQL",
+            "matched_text": "SQL",
+            "context": "Languages: Python, Go, SQL"
+          },
+          {
+            "skill": "Go",
+            "matched_text": "Go",
+            "context": "Languages: Python, Go, SQL"
+          },
+          {
+            "skill": "FastAPI",
+            "matched_text": "FastAPI",
+            "context": "Frameworks: FastAPI, Flask, Django, SQLAlchemy"
+          },
+          {
+            "skill": "Django",
+            "matched_text": "Django",
+            "context": "Frameworks: FastAPI, Flask, Django, SQLAlchemy"
+          },
+          {
+            "skill": "Flask",
+            "matched_text": "Flask",
+            "context": "Frameworks: FastAPI, Flask, Django, SQLAlchemy"
+          },
+          {
+            "skill": "PostgreSQL",
+            "matched_text": "PostgreSQL",
+            "context": "Databases & Cache: PostgreSQL, Redis, MySQL"
+          },
+          {
+            "skill": "Redis",
+            "matched_text": "Redis",
+            "context": "Databases & Cache: PostgreSQL, Redis, MySQL"
+          },
+          {
+            "skill": "MySQL",
+            "matched_text": "MySQL",
+            "context": "Databases & Cache: PostgreSQL, Redis, MySQL"
+          },
+          {
+            "skill": "Kubernetes",
+            "matched_text": "Kubernetes",
+            "context": "DevOps & Cloud: Docker, Kubernetes, AWS, Git"
+          },
+          {
+            "skill": "Docker",
+            "matched_text": "Docker",
+            "context": "DevOps & Cloud: Docker, Kubernetes, AWS, Git"
+          },
+          {
+            "skill": "AWS",
+            "matched_text": "AWS",
+            "context": "DevOps & Cloud: Docker, Kubernetes, AWS, Git"
+          },
+          {
+            "skill": "Git",
+            "matched_text": "Git",
+            "context": "DevOps & Cloud: Docker, Kubernetes, AWS, Git"
+          }
+        ]
+      },
+      {
+        "tp": 11,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "true_positives": [
+          "CSS",
+          "Cypress",
+          "GraphQL",
+          "HTML",
+          "JavaScript",
+          "Jest",
+          "Next.js",
+          "React",
+          "Redux",
+          "Tailwind CSS",
+          "TypeScript"
+        ],
+        "false_positives": [],
+        "false_negatives": [],
+        "resume_id": "candidate_gamma",
+        "filename": "candidate_gamma.pdf",
+        "predicted_skills": [
+          "CSS",
+          "Cypress",
+          "GraphQL",
+          "HTML",
+          "JavaScript",
+          "Jest",
+          "Next.js",
+          "React",
+          "Redux",
+          "Tailwind CSS",
+          "TypeScript"
+        ],
+        "ground_truth_skills": [
+          "TypeScript",
+          "JavaScript",
+          "HTML",
+          "CSS",
+          "React",
+          "Next.js",
+          "Redux",
+          "Tailwind CSS",
+          "Jest",
+          "Cypress",
+          "GraphQL"
+        ],
+        "char_count": 650,
+        "warnings": [],
+        "detected_evidence": [
+          {
+            "skill": "TypeScript",
+            "matched_text": "TypeScript",
+            "context": "Languages: TypeScript, JavaScript, HTML, CSS"
+          },
+          {
+            "skill": "JavaScript",
+            "matched_text": "JavaScript",
+            "context": "Languages: TypeScript, JavaScript, HTML, CSS"
+          },
+          {
+            "skill": "HTML",
+            "matched_text": "HTML",
+            "context": "Languages: TypeScript, JavaScript, HTML, CSS"
+          },
+          {
+            "skill": "CSS",
+            "matched_text": "CSS",
+            "context": "Languages: TypeScript, JavaScript, HTML, CSS"
+          },
+          {
+            "skill": "Tailwind CSS",
+            "matched_text": "Tailwind CSS",
+            "context": "Frameworks: React, Next.js, Redux, Tailwind CSS"
+          },
+          {
+            "skill": "Next.js",
+            "matched_text": "Next.js",
+            "context": "Frameworks: React, Next.js, Redux, Tailwind CSS"
+          },
+          {
+            "skill": "React",
+            "matched_text": "React",
+            "context": "Frameworks: React, Next.js, Redux, Tailwind CSS"
+          },
+          {
+            "skill": "Redux",
+            "matched_text": "Redux",
+            "context": "Frameworks: React, Next.js, Redux, Tailwind CSS"
+          },
+          {
+            "skill": "Cypress",
+            "matched_text": "Cypress",
+            "context": "Testing: Jest, Cypress"
+          },
+          {
+            "skill": "Jest",
+            "matched_text": "Jest",
+            "context": "Testing: Jest, Cypress"
+          },
+          {
+            "skill": "GraphQL",
+            "matched_text": "GraphQL",
+            "context": "\u00b7 Integrated GraphQL and RESTful backend APIs with optimistic UI caching."
+          }
+        ]
+      },
+      {
+        "tp": 7,
+        "fp": 2,
+        "fn": 0,
+        "precision": 0.7778,
+        "recall": 1.0,
+        "f1": 0.875,
+        "true_positives": [
+          "Git",
+          "NumPy",
+          "Pandas",
+          "Python",
+          "SQL",
+          "Tableau",
+          "scikit-learn"
+        ],
+        "false_positives": [
+          "ETL",
+          "Machine Learning"
+        ],
+        "false_negatives": [],
+        "resume_id": "candidate_delta",
+        "filename": "candidate_delta.pdf",
+        "predicted_skills": [
+          "ETL",
+          "Git",
+          "Machine Learning",
+          "NumPy",
+          "Pandas",
+          "Python",
+          "SQL",
+          "Tableau",
+          "scikit-learn"
+        ],
+        "ground_truth_skills": [
+          "Python",
+          "SQL",
+          "Pandas",
+          "NumPy",
+          "scikit-learn",
+          "Tableau",
+          "Git"
+        ],
+        "char_count": 759,
+        "warnings": [],
+        "detected_evidence": [
+          {
+            "skill": "Machine Learning",
+            "matched_text": "ML",
+            "context": "Data Analyst & Junior ML Developer | delta@example.internal"
+          },
+          {
+            "skill": "Python",
+            "matched_text": "Python",
+            "context": "Languages: Python, SQL"
+          },
+          {
+            "skill": "SQL",
+            "matched_text": "SQL",
+            "context": "Languages: Python, SQL"
+          },
+          {
+            "skill": "scikit-learn",
+            "matched_text": "scikit-learn",
+            "context": "Libraries & Tools: Pandas, NumPy, scikit-learn, Tableau, Git"
+          },
+          {
+            "skill": "Tableau",
+            "matched_text": "Tableau",
+            "context": "Libraries & Tools: Pandas, NumPy, scikit-learn, Tableau, Git"
+          },
+          {
+            "skill": "Pandas",
+            "matched_text": "Pandas",
+            "context": "Libraries & Tools: Pandas, NumPy, scikit-learn, Tableau, Git"
+          },
+          {
+            "skill": "NumPy",
+            "matched_text": "NumPy",
+            "context": "Libraries & Tools: Pandas, NumPy, scikit-learn, Tableau, Git"
+          },
+          {
+            "skill": "Git",
+            "matched_text": "Git",
+            "context": "Libraries & Tools: Pandas, NumPy, scikit-learn, Tableau, Git"
+          },
+          {
+            "skill": "ETL",
+            "matched_text": "ETL",
+            "context": "- Versioned analytical models and ETL scripts using Git."
+          }
+        ]
+      },
+      {
+        "tp": 9,
+        "fp": 1,
+        "fn": 0,
+        "precision": 0.9,
+        "recall": 1.0,
+        "f1": 0.9474,
+        "true_positives": [
+          "AWS",
+          "Bash",
+          "CI/CD",
+          "Docker",
+          "Git",
+          "Kubernetes",
+          "Linux",
+          "Python",
+          "Terraform"
+        ],
+        "false_positives": [
+          "Microservices"
+        ],
+        "false_negatives": [],
+        "resume_id": "candidate_epsilon",
+        "filename": "candidate_epsilon.pdf",
+        "predicted_skills": [
+          "AWS",
+          "Bash",
+          "CI/CD",
+          "Docker",
+          "Git",
+          "Kubernetes",
+          "Linux",
+          "Microservices",
+          "Python",
+          "Terraform"
+        ],
+        "ground_truth_skills": [
+          "AWS",
+          "Linux",
+          "Docker",
+          "Kubernetes",
+          "CI/CD",
+          "Terraform",
+          "Bash",
+          "Git",
+          "Python"
+        ],
+        "char_count": 866,
+        "warnings": [],
+        "detected_evidence": [
+          {
+            "skill": "CI/CD",
+            "matched_text": "CI/CD",
+            "context": "code, and CI/CD pipelines."
+          },
+          {
+            "skill": "Linux",
+            "matched_text": "Linux",
+            "context": "Cloud & Virtualization: AWS, Linux"
+          },
+          {
+            "skill": "AWS",
+            "matched_text": "AWS",
+            "context": "Cloud & Virtualization: AWS, Linux"
+          },
+          {
+            "skill": "Kubernetes",
+            "matched_text": "Kubernetes",
+            "context": "Containers & Orchestration: Docker, Kubernetes"
+          },
+          {
+            "skill": "Docker",
+            "matched_text": "Docker",
+            "context": "Containers & Orchestration: Docker, Kubernetes"
+          },
+          {
+            "skill": "Terraform",
+            "matched_text": "Terraform",
+            "context": "Automation & Tools: CI/CD, Terraform, Bash, Git, Python"
+          },
+          {
+            "skill": "Python",
+            "matched_text": "Python",
+            "context": "Automation & Tools: CI/CD, Terraform, Bash, Git, Python"
+          },
+          {
+            "skill": "Bash",
+            "matched_text": "Bash",
+            "context": "Automation & Tools: CI/CD, Terraform, Bash, Git, Python"
+          },
+          {
+            "skill": "Git",
+            "matched_text": "Git",
+            "context": "Automation & Tools: CI/CD, Terraform, Bash, Git, Python"
+          },
+          {
+            "skill": "Microservices",
+            "matched_text": "microservices",
+            "context": "- Administered multi-tenant Kubernetes clusters running containerized Docker microservices."
+          }
+        ]
+      },
+      {
+        "tp": 9,
+        "fp": 1,
+        "fn": 0,
+        "precision": 0.9,
+        "recall": 1.0,
+        "f1": 0.9474,
+        "true_positives": [
+          "Apache Spark",
+          "Docker",
+          "Git",
+          "Linux",
+          "Pandas",
+          "PostgreSQL",
+          "Python",
+          "Redis",
+          "SQL"
+        ],
+        "false_positives": [
+          "ETL"
+        ],
+        "false_negatives": [],
+        "resume_id": "candidate_zeta",
+        "filename": "candidate_zeta.pdf",
+        "predicted_skills": [
+          "Apache Spark",
+          "Docker",
+          "ETL",
+          "Git",
+          "Linux",
+          "Pandas",
+          "PostgreSQL",
+          "Python",
+          "Redis",
+          "SQL"
+        ],
+        "ground_truth_skills": [
+          "Python",
+          "SQL",
+          "PostgreSQL",
+          "Redis",
+          "Apache Spark",
+          "Pandas",
+          "Docker",
+          "Linux",
+          "Git"
+        ],
+        "char_count": 806,
+        "warnings": [],
+        "detected_evidence": [
+          {
+            "skill": "Python",
+            "matched_text": "Python",
+            "context": "Languages: Python, SQL"
+          },
+          {
+            "skill": "SQL",
+            "matched_text": "SQL",
+            "context": "Languages: Python, SQL"
+          },
+          {
+            "skill": "Apache Spark",
+            "matched_text": "Apache Spark",
+            "context": "Data Technologies: PostgreSQL, Redis, Apache Spark, Pandas"
+          },
+          {
+            "skill": "PostgreSQL",
+            "matched_text": "PostgreSQL",
+            "context": "Data Technologies: PostgreSQL, Redis, Apache Spark, Pandas"
+          },
+          {
+            "skill": "Pandas",
+            "matched_text": "Pandas",
+            "context": "Data Technologies: PostgreSQL, Redis, Apache Spark, Pandas"
+          },
+          {
+            "skill": "Redis",
+            "matched_text": "Redis",
+            "context": "Data Technologies: PostgreSQL, Redis, Apache Spark, Pandas"
+          },
+          {
+            "skill": "Docker",
+            "matched_text": "Docker",
+            "context": "Infrastructure: Docker, Linux, Git"
+          },
+          {
+            "skill": "Linux",
+            "matched_text": "Linux",
+            "context": "Infrastructure: Docker, Linux, Git"
+          },
+          {
+            "skill": "Git",
+            "matched_text": "Git",
+            "context": "Infrastructure: Docker, Linux, Git"
+          },
+          {
+            "skill": "ETL",
+            "matched_text": "ETL",
+            "context": "- Designed high-throughput batch ETL workloads using Apache Spark and Python."
+          }
+        ]
+      },
+      {
+        "tp": 10,
+        "fp": 1,
+        "fn": 0,
+        "precision": 0.9091,
+        "recall": 1.0,
+        "f1": 0.9524,
+        "true_positives": [
+          "CSS",
+          "Express.js",
+          "Git",
+          "HTML",
+          "JavaScript",
+          "MongoDB",
+          "Node.js",
+          "REST API",
+          "React",
+          "TypeScript"
+        ],
+        "false_positives": [
+          "Microservices"
+        ],
+        "false_negatives": [],
+        "resume_id": "candidate_eta",
+        "filename": "candidate_eta.pdf",
+        "predicted_skills": [
+          "CSS",
+          "Express.js",
+          "Git",
+          "HTML",
+          "JavaScript",
+          "Microservices",
+          "MongoDB",
+          "Node.js",
+          "REST API",
+          "React",
+          "TypeScript"
+        ],
+        "ground_truth_skills": [
+          "JavaScript",
+          "TypeScript",
+          "HTML",
+          "CSS",
+          "React",
+          "Node.js",
+          "Express.js",
+          "MongoDB",
+          "REST API",
+          "Git"
+        ],
+        "char_count": 785,
+        "warnings": [],
+        "detected_evidence": [
+          {
+            "skill": "JavaScript",
+            "matched_text": "JavaScript",
+            "context": "Full Stack JavaScript Engineer | eta@example.internal"
+          },
+          {
+            "skill": "REST API",
+            "matched_text": "REST",
+            "context": "Full stack web developer with 4 years of experience building scalable single-page web applications and REST"
+          },
+          {
+            "skill": "TypeScript",
+            "matched_text": "TypeScript",
+            "context": "Languages: JavaScript, TypeScript, HTML, CSS"
+          },
+          {
+            "skill": "HTML",
+            "matched_text": "HTML",
+            "context": "Languages: JavaScript, TypeScript, HTML, CSS"
+          },
+          {
+            "skill": "CSS",
+            "matched_text": "CSS",
+            "context": "Languages: JavaScript, TypeScript, HTML, CSS"
+          },
+          {
+            "skill": "Express.js",
+            "matched_text": "Express.js",
+            "context": "Frameworks & Runtimes: React, Node.js, Express.js, MongoDB"
+          },
+          {
+            "skill": "Node.js",
+            "matched_text": "Node.js",
+            "context": "Frameworks & Runtimes: React, Node.js, Express.js, MongoDB"
+          },
+          {
+            "skill": "MongoDB",
+            "matched_text": "MongoDB",
+            "context": "Frameworks & Runtimes: React, Node.js, Express.js, MongoDB"
+          },
+          {
+            "skill": "React",
+            "matched_text": "React",
+            "context": "Frameworks & Runtimes: React, Node.js, Express.js, MongoDB"
+          },
+          {
+            "skill": "Git",
+            "matched_text": "Git",
+            "context": "Architecture: REST API, Git"
+          },
+          {
+            "skill": "Microservices",
+            "matched_text": "microservices",
+            "context": "- Engineered asynchronous REST API backend microservices in Node.js and Express.js."
+          }
+        ]
+      },
+      {
+        "tp": 5,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "true_positives": [
+          "Bash",
+          "C++",
+          "Git",
+          "Linux",
+          "Rust"
+        ],
+        "false_positives": [],
+        "false_negatives": [],
+        "resume_id": "candidate_theta",
+        "filename": "candidate_theta.pdf",
+        "predicted_skills": [
+          "Bash",
+          "C++",
+          "Git",
+          "Linux",
+          "Rust"
+        ],
+        "ground_truth_skills": [
+          "C++",
+          "Rust",
+          "Linux",
+          "Git",
+          "Bash"
+        ],
+        "char_count": 610,
+        "warnings": [],
+        "detected_evidence": [
+          {
+            "skill": "Rust",
+            "matched_text": "Rust",
+            "context": "Languages: C++, Rust"
+          },
+          {
+            "skill": "C++",
+            "matched_text": "C++",
+            "context": "Languages: C++, Rust"
+          },
+          {
+            "skill": "Linux",
+            "matched_text": "Linux",
+            "context": "Platforms: Linux"
+          },
+          {
+            "skill": "Bash",
+            "matched_text": "Bash",
+            "context": "Tools: Git, Bash"
+          },
+          {
+            "skill": "Git",
+            "matched_text": "Git",
+            "context": "Tools: Git, Bash"
+          }
+        ]
+      },
+      {
+        "tp": 8,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "true_positives": [
+          "Deep Learning",
+          "NLP",
+          "NumPy",
+          "Pandas",
+          "PyTorch",
+          "Python",
+          "scikit-learn",
+          "spaCy"
+        ],
+        "false_positives": [],
+        "false_negatives": [],
+        "resume_id": "candidate_iota",
+        "filename": "candidate_iota.pdf",
+        "predicted_skills": [
+          "Deep Learning",
+          "NLP",
+          "NumPy",
+          "Pandas",
+          "PyTorch",
+          "Python",
+          "scikit-learn",
+          "spaCy"
+        ],
+        "ground_truth_skills": [
+          "Python",
+          "PyTorch",
+          "NLP",
+          "spaCy",
+          "scikit-learn",
+          "Deep Learning",
+          "Pandas",
+          "NumPy"
+        ],
+        "char_count": 839,
+        "warnings": [],
+        "detected_evidence": [
+          {
+            "skill": "NLP",
+            "matched_text": "NLP",
+            "context": "Senior NLP Research Specialist | iota@example.internal"
+          },
+          {
+            "skill": "Python",
+            "matched_text": "Python",
+            "context": "Languages: Python"
+          },
+          {
+            "skill": "Deep Learning",
+            "matched_text": "Deep Learning",
+            "context": "Deep Learning & NLP: PyTorch, NLP, spaCy, scikit-learn, Deep Learning, Pandas, NumPy"
+          },
+          {
+            "skill": "scikit-learn",
+            "matched_text": "scikit-learn",
+            "context": "Deep Learning & NLP: PyTorch, NLP, spaCy, scikit-learn, Deep Learning, Pandas, NumPy"
+          },
+          {
+            "skill": "PyTorch",
+            "matched_text": "PyTorch",
+            "context": "Deep Learning & NLP: PyTorch, NLP, spaCy, scikit-learn, Deep Learning, Pandas, NumPy"
+          },
+          {
+            "skill": "Pandas",
+            "matched_text": "Pandas",
+            "context": "Deep Learning & NLP: PyTorch, NLP, spaCy, scikit-learn, Deep Learning, Pandas, NumPy"
+          },
+          {
+            "skill": "spaCy",
+            "matched_text": "spaCy",
+            "context": "Deep Learning & NLP: PyTorch, NLP, spaCy, scikit-learn, Deep Learning, Pandas, NumPy"
+          },
+          {
+            "skill": "NumPy",
+            "matched_text": "NumPy",
+            "context": "Deep Learning & NLP: PyTorch, NLP, spaCy, scikit-learn, Deep Learning, Pandas, NumPy"
+          }
+        ]
+      },
+      {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "true_positives": [],
+        "false_positives": [],
+        "false_negatives": [],
+        "resume_id": "scanned_image_resume",
+        "filename": "scanned_image_resume.pdf",
+        "predicted_skills": [],
+        "ground_truth_skills": [],
+        "char_count": 0,
+        "warnings": [
+          "No extractable text was found. OCR is not supported in the current version."
+        ],
+        "detected_evidence": []
+      }
+    ],
+    "aggregate": {
+      "micro": {
+        "tp": 88,
+        "fp": 5,
+        "fn": 0,
+        "precision": 0.9462,
+        "recall": 1.0,
+        "f1": 0.9724
+      },
+      "macro": {
+        "precision": 0.9487,
+        "recall": 1.0,
+        "f1": 0.9722
+      }
+    }
+  },
+  "ranking": {
+    "scenarios": [
+      {
+        "scenario_id": "ml_engineer_ranking",
+        "job_title": "Machine Learning Engineer",
+        "job_filename": "ml_engineer.txt",
+        "candidate_count": 6,
+        "dcg_at_5": 4.1925,
+        "idcg_at_5": 4.1925,
+        "ndcg_at_5": 1.0,
+        "ranked_candidates": [
+          {
+            "candidate_id": "candidate_alpha",
+            "filename": "candidate_alpha.pdf",
+            "ground_truth_relevance": 2,
+            "overall_score": 40.76,
+            "text_similarity_percentage": 15.37,
+            "skill_coverage_percentage": 100.0,
+            "matched_required_skills": [
+              "Python",
+              "PyTorch",
+              "scikit-learn",
+              "NLP",
+              "Pandas"
+            ],
+            "missing_required_skills": [],
+            "detected_skills_count": 15,
+            "rationale": "Strong match: Full 100% required skill coverage (Python, PyTorch, scikit-learn, NLP, Pandas) plus Docker and spaCy.",
+            "predicted_rank": 1
+          },
+          {
+            "candidate_id": "candidate_iota",
+            "filename": "candidate_iota.pdf",
+            "ground_truth_relevance": 2,
+            "overall_score": 39.35,
+            "text_similarity_percentage": 13.36,
+            "skill_coverage_percentage": 100.0,
+            "matched_required_skills": [
+              "Python",
+              "PyTorch",
+              "scikit-learn",
+              "NLP",
+              "Pandas"
+            ],
+            "missing_required_skills": [],
+            "detected_skills_count": 8,
+            "rationale": "Strong match: Complete NLP/ML required skill set (Python, PyTorch, scikit-learn, NLP, Pandas) plus Deep Learning and spaCy.",
+            "predicted_rank": 2
+          },
+          {
+            "candidate_id": "candidate_delta",
+            "filename": "candidate_delta.pdf",
+            "ground_truth_relevance": 1,
+            "overall_score": 22.27,
+            "text_similarity_percentage": 6.1,
+            "skill_coverage_percentage": 60.0,
+            "matched_required_skills": [
+              "Python",
+              "scikit-learn",
+              "Pandas"
+            ],
+            "missing_required_skills": [
+              "PyTorch",
+              "NLP"
+            ],
+            "detected_skills_count": 9,
+            "rationale": "Partial match: Data analyst with Python, scikit-learn, Pandas (3/5 required); lacks PyTorch and NLP.",
+            "predicted_rank": 3
+          },
+          {
+            "candidate_id": "candidate_beta",
+            "filename": "candidate_beta.pdf",
+            "ground_truth_relevance": 1,
+            "overall_score": 9.51,
+            "text_similarity_percentage": 5.01,
+            "skill_coverage_percentage": 20.0,
+            "matched_required_skills": [
+              "Python"
+            ],
+            "missing_required_skills": [
+              "PyTorch",
+              "scikit-learn",
+              "NLP",
+              "Pandas"
+            ],
+            "detected_skills_count": 14,
+            "rationale": "Partial match: Backend architect with Python, Docker, and FastAPI, but lacks core ML/NLP frameworks.",
+            "predicted_rank": 4
+          },
+          {
+            "candidate_id": "candidate_theta",
+            "filename": "candidate_theta.pdf",
+            "ground_truth_relevance": 0,
+            "overall_score": 2.49,
+            "text_similarity_percentage": 3.56,
+            "skill_coverage_percentage": 0.0,
+            "matched_required_skills": [],
+            "missing_required_skills": [
+              "Python",
+              "PyTorch",
+              "scikit-learn",
+              "NLP",
+              "Pandas"
+            ],
+            "detected_skills_count": 5,
+            "rationale": "Not relevant: Embedded systems C++/Rust developer with no ML overlap.",
+            "predicted_rank": 5
+          },
+          {
+            "candidate_id": "candidate_gamma",
+            "filename": "candidate_gamma.pdf",
+            "ground_truth_relevance": 0,
+            "overall_score": 2.39,
+            "text_similarity_percentage": 3.41,
+            "skill_coverage_percentage": 0.0,
+            "matched_required_skills": [],
+            "missing_required_skills": [
+              "Python",
+              "PyTorch",
+              "scikit-learn",
+              "NLP",
+              "Pandas"
+            ],
+            "detected_skills_count": 11,
+            "rationale": "Not relevant: Frontend TypeScript/React engineer with zero ML/NLP competencies.",
+            "predicted_rank": 6
+          }
+        ]
+      },
+      {
+        "scenario_id": "software_engineer_ranking",
+        "job_title": "Senior Backend Software Engineer",
+        "job_filename": "software_engineer.txt",
+        "candidate_count": 6,
+        "dcg_at_5": 3.5616,
+        "idcg_at_5": 3.5616,
+        "ndcg_at_5": 1.0,
+        "ranked_candidates": [
+          {
+            "candidate_id": "candidate_beta",
+            "filename": "candidate_beta.pdf",
+            "ground_truth_relevance": 2,
+            "overall_score": 39.76,
+            "text_similarity_percentage": 13.95,
+            "skill_coverage_percentage": 100.0,
+            "matched_required_skills": [
+              "Python",
+              "FastAPI",
+              "PostgreSQL",
+              "Docker"
+            ],
+            "missing_required_skills": [],
+            "detected_skills_count": 14,
+            "rationale": "Strong match: Has all 4 required skills (Python, FastAPI, PostgreSQL, Docker) plus Redis, Kubernetes, AWS.",
+            "predicted_rank": 1
+          },
+          {
+            "candidate_id": "candidate_zeta",
+            "filename": "candidate_zeta.pdf",
+            "ground_truth_relevance": 1,
+            "overall_score": 30.0,
+            "text_similarity_percentage": 10.72,
+            "skill_coverage_percentage": 75.0,
+            "matched_required_skills": [
+              "Python",
+              "PostgreSQL",
+              "Docker"
+            ],
+            "missing_required_skills": [
+              "FastAPI"
+            ],
+            "detected_skills_count": 10,
+            "rationale": "Partial match: Data platform engineer with Python, PostgreSQL, Docker, Redis; missing FastAPI.",
+            "predicted_rank": 2
+          },
+          {
+            "candidate_id": "candidate_epsilon",
+            "filename": "candidate_epsilon.pdf",
+            "ground_truth_relevance": 1,
+            "overall_score": 20.96,
+            "text_similarity_percentage": 8.52,
+            "skill_coverage_percentage": 50.0,
+            "matched_required_skills": [
+              "Python",
+              "Docker"
+            ],
+            "missing_required_skills": [
+              "FastAPI",
+              "PostgreSQL"
+            ],
+            "detected_skills_count": 10,
+            "rationale": "Partial match: DevOps engineer with Docker, Python, Kubernetes, AWS, CI/CD; missing FastAPI, PostgreSQL.",
+            "predicted_rank": 3
+          },
+          {
+            "candidate_id": "candidate_alpha",
+            "filename": "candidate_alpha.pdf",
+            "ground_truth_relevance": 1,
+            "overall_score": 19.44,
+            "text_similarity_percentage": 6.35,
+            "skill_coverage_percentage": 50.0,
+            "matched_required_skills": [
+              "Python",
+              "Docker"
+            ],
+            "missing_required_skills": [
+              "FastAPI",
+              "PostgreSQL"
+            ],
+            "detected_skills_count": 15,
+            "rationale": "Partial match: ML engineer with Python, Docker, CI/CD, SQL; missing FastAPI, PostgreSQL.",
+            "predicted_rank": 4
+          },
+          {
+            "candidate_id": "candidate_gamma",
+            "filename": "candidate_gamma.pdf",
+            "ground_truth_relevance": 0,
+            "overall_score": 4.92,
+            "text_similarity_percentage": 7.03,
+            "skill_coverage_percentage": 0.0,
+            "matched_required_skills": [],
+            "missing_required_skills": [
+              "Python",
+              "FastAPI",
+              "PostgreSQL",
+              "Docker"
+            ],
+            "detected_skills_count": 11,
+            "rationale": "Not relevant: Frontend React/CSS developer.",
+            "predicted_rank": 5
+          },
+          {
+            "candidate_id": "candidate_theta",
+            "filename": "candidate_theta.pdf",
+            "ground_truth_relevance": 0,
+            "overall_score": 4.19,
+            "text_similarity_percentage": 5.98,
+            "skill_coverage_percentage": 0.0,
+            "matched_required_skills": [],
+            "missing_required_skills": [
+              "Python",
+              "FastAPI",
+              "PostgreSQL",
+              "Docker"
+            ],
+            "detected_skills_count": 5,
+            "rationale": "Not relevant: Embedded C++/Rust developer.",
+            "predicted_rank": 6
+          }
+        ]
+      },
+      {
+        "scenario_id": "devops_engineer_ranking",
+        "job_title": "Cloud & DevOps Engineer",
+        "job_filename": "devops_engineer.txt",
+        "candidate_count": 6,
+        "dcg_at_5": 3.1309,
+        "idcg_at_5": 3.1309,
+        "ndcg_at_5": 1.0,
+        "ranked_candidates": [
+          {
+            "candidate_id": "candidate_epsilon",
+            "filename": "candidate_epsilon.pdf",
+            "ground_truth_relevance": 2,
+            "overall_score": 44.38,
+            "text_similarity_percentage": 20.55,
+            "skill_coverage_percentage": 100.0,
+            "matched_required_skills": [
+              "Docker",
+              "Kubernetes",
+              "AWS",
+              "CI/CD",
+              "Linux"
+            ],
+            "missing_required_skills": [],
+            "detected_skills_count": 10,
+            "rationale": "Strong match: All 5 required skills (Docker, Kubernetes, AWS, CI/CD, Linux) plus Python, Bash, Terraform.",
+            "predicted_rank": 1
+          },
+          {
+            "candidate_id": "candidate_beta",
+            "filename": "candidate_beta.pdf",
+            "ground_truth_relevance": 1,
+            "overall_score": 24.45,
+            "text_similarity_percentage": 9.22,
+            "skill_coverage_percentage": 60.0,
+            "matched_required_skills": [
+              "Docker",
+              "Kubernetes",
+              "AWS"
+            ],
+            "missing_required_skills": [
+              "CI/CD",
+              "Linux"
+            ],
+            "detected_skills_count": 14,
+            "rationale": "Partial match: Has Docker, Kubernetes, AWS, Python; missing CI/CD, Linux.",
+            "predicted_rank": 2
+          },
+          {
+            "candidate_id": "candidate_alpha",
+            "filename": "candidate_alpha.pdf",
+            "ground_truth_relevance": 1,
+            "overall_score": 23.2,
+            "text_similarity_percentage": 7.43,
+            "skill_coverage_percentage": 60.0,
+            "matched_required_skills": [
+              "Docker",
+              "CI/CD",
+              "Linux"
+            ],
+            "missing_required_skills": [
+              "Kubernetes",
+              "AWS"
+            ],
+            "detected_skills_count": 15,
+            "rationale": "Partial match: Has Docker, Linux, CI/CD, Python; missing Kubernetes, AWS.",
+            "predicted_rank": 3
+          },
+          {
+            "candidate_id": "candidate_theta",
+            "filename": "candidate_theta.pdf",
+            "ground_truth_relevance": 0,
+            "overall_score": 10.94,
+            "text_similarity_percentage": 7.06,
+            "skill_coverage_percentage": 20.0,
+            "matched_required_skills": [
+              "Linux"
+            ],
+            "missing_required_skills": [
+              "Docker",
+              "Kubernetes",
+              "AWS",
+              "CI/CD"
+            ],
+            "detected_skills_count": 5,
+            "rationale": "Not relevant: Embedded developer with Linux and Bash; lacks cloud and containerization.",
+            "predicted_rank": 4
+          },
+          {
+            "candidate_id": "candidate_gamma",
+            "filename": "candidate_gamma.pdf",
+            "ground_truth_relevance": 0,
+            "overall_score": 1.94,
+            "text_similarity_percentage": 2.77,
+            "skill_coverage_percentage": 0.0,
+            "matched_required_skills": [],
+            "missing_required_skills": [
+              "Docker",
+              "Kubernetes",
+              "AWS",
+              "CI/CD",
+              "Linux"
+            ],
+            "detected_skills_count": 11,
+            "rationale": "Not relevant: Frontend developer.",
+            "predicted_rank": 5
+          },
+          {
+            "candidate_id": "candidate_delta",
+            "filename": "candidate_delta.pdf",
+            "ground_truth_relevance": 0,
+            "overall_score": 1.81,
+            "text_similarity_percentage": 2.58,
+            "skill_coverage_percentage": 0.0,
+            "matched_required_skills": [],
+            "missing_required_skills": [
+              "Docker",
+              "Kubernetes",
+              "AWS",
+              "CI/CD",
+              "Linux"
+            ],
+            "detected_skills_count": 9,
+            "rationale": "Not relevant: Data analyst.",
+            "predicted_rank": 6
+          }
+        ]
+      },
+      {
+        "scenario_id": "frontend_engineer_ranking",
+        "job_title": "Senior Frontend Engineer",
+        "job_filename": "frontend_engineer.txt",
+        "candidate_count": 6,
+        "dcg_at_5": 3.2619,
+        "idcg_at_5": 3.2619,
+        "ndcg_at_5": 1.0,
+        "ranked_candidates": [
+          {
+            "candidate_id": "candidate_gamma",
+            "filename": "candidate_gamma.pdf",
+            "ground_truth_relevance": 2,
+            "overall_score": 46.17,
+            "text_similarity_percentage": 23.1,
+            "skill_coverage_percentage": 100.0,
+            "matched_required_skills": [
+              "React",
+              "TypeScript",
+              "JavaScript",
+              "HTML",
+              "CSS"
+            ],
+            "missing_required_skills": [],
+            "detected_skills_count": 11,
+            "rationale": "Strong match: All 5 required skills (React, TypeScript, JavaScript, HTML, CSS) plus Next.js, Tailwind CSS, Redux, Jest.",
+            "predicted_rank": 1
+          },
+          {
+            "candidate_id": "candidate_eta",
+            "filename": "candidate_eta.pdf",
+            "ground_truth_relevance": 2,
+            "overall_score": 38.86,
+            "text_similarity_percentage": 12.65,
+            "skill_coverage_percentage": 100.0,
+            "matched_required_skills": [
+              "React",
+              "TypeScript",
+              "JavaScript",
+              "HTML",
+              "CSS"
+            ],
+            "missing_required_skills": [],
+            "detected_skills_count": 11,
+            "rationale": "Strong match: All 5 required skills (React, TypeScript, JavaScript, HTML, CSS) plus Node.js, REST API.",
+            "predicted_rank": 2
+          },
+          {
+            "candidate_id": "candidate_beta",
+            "filename": "candidate_beta.pdf",
+            "ground_truth_relevance": 0,
+            "overall_score": 2.96,
+            "text_similarity_percentage": 4.23,
+            "skill_coverage_percentage": 0.0,
+            "matched_required_skills": [],
+            "missing_required_skills": [
+              "React",
+              "TypeScript",
+              "JavaScript",
+              "HTML",
+              "CSS"
+            ],
+            "detected_skills_count": 14,
+            "rationale": "Not relevant: Python backend developer.",
+            "predicted_rank": 3
+          },
+          {
+            "candidate_id": "candidate_theta",
+            "filename": "candidate_theta.pdf",
+            "ground_truth_relevance": 0,
+            "overall_score": 2.24,
+            "text_similarity_percentage": 3.2,
+            "skill_coverage_percentage": 0.0,
+            "matched_required_skills": [],
+            "missing_required_skills": [
+              "React",
+              "TypeScript",
+              "JavaScript",
+              "HTML",
+              "CSS"
+            ],
+            "detected_skills_count": 5,
+            "rationale": "Not relevant: Embedded systems developer.",
+            "predicted_rank": 4
+          },
+          {
+            "candidate_id": "candidate_alpha",
+            "filename": "candidate_alpha.pdf",
+            "ground_truth_relevance": 0,
+            "overall_score": 2.13,
+            "text_similarity_percentage": 3.05,
+            "skill_coverage_percentage": 0.0,
+            "matched_required_skills": [],
+            "missing_required_skills": [
+              "React",
+              "TypeScript",
+              "JavaScript",
+              "HTML",
+              "CSS"
+            ],
+            "detected_skills_count": 15,
+            "rationale": "Not relevant: Machine Learning developer.",
+            "predicted_rank": 5
+          },
+          {
+            "candidate_id": "candidate_delta",
+            "filename": "candidate_delta.pdf",
+            "ground_truth_relevance": 0,
+            "overall_score": 0.91,
+            "text_similarity_percentage": 1.3,
+            "skill_coverage_percentage": 0.0,
+            "matched_required_skills": [],
+            "missing_required_skills": [
+              "React",
+              "TypeScript",
+              "JavaScript",
+              "HTML",
+              "CSS"
+            ],
+            "detected_skills_count": 9,
+            "rationale": "Not relevant: Data analyst.",
+            "predicted_rank": 6
+          }
+        ]
+      }
+    ],
+    "average_ndcg_at_5": 1.0
+  },
+  "error_analysis": [
+    {
+      "category": "Extraction: False Positive Skill",
+      "item": "candidate_delta.pdf",
+      "description": "Skills detected that were not explicitly in ground truth: ['ETL', 'Machine Learning']",
+      "detail": "Model detected terms matching controlled aliases (e.g. general technical keywords) present in context.",
+      "severity": "Low"
+    },
+    {
+      "category": "Extraction: False Positive Skill",
+      "item": "candidate_epsilon.pdf",
+      "description": "Skills detected that were not explicitly in ground truth: ['Microservices']",
+      "detail": "Model detected terms matching controlled aliases (e.g. general technical keywords) present in context.",
+      "severity": "Low"
+    },
+    {
+      "category": "Extraction: False Positive Skill",
+      "item": "candidate_zeta.pdf",
+      "description": "Skills detected that were not explicitly in ground truth: ['ETL']",
+      "detail": "Model detected terms matching controlled aliases (e.g. general technical keywords) present in context.",
+      "severity": "Low"
+    },
+    {
+      "category": "Extraction: False Positive Skill",
+      "item": "candidate_eta.pdf",
+      "description": "Skills detected that were not explicitly in ground truth: ['Microservices']",
+      "detail": "Model detected terms matching controlled aliases (e.g. general technical keywords) present in context.",
+      "severity": "Low"
+    },
+    {
+      "category": "Extraction: Scanned Image Handling",
+      "item": "scanned_image_resume.pdf",
+      "description": "Zero text stream extracted; OCR unavailable in current version.",
+      "detail": "Correctly handled with fallback warning: 'No extractable text was found. OCR is not supported in the current version.'. F1=1.00 for empty rejection.",
+      "severity": "Informational"
+    }
+  ]
+}

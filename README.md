@@ -278,6 +278,27 @@ The Next.js App Router provides 11 user-facing routes (plus the internal `/_not-
 
 ---
 
+## Deployment
+
+ResumeIQ is deployed across two cloud hosting environments with a decoupled architecture:
+
+- **Frontend Hosting:** [Vercel](https://vercel.com) (Next.js 14 App Router)
+  - **Live URL:** https://resume-iq-five-umber.vercel.app/
+  - **Environment Variable:** `NEXT_PUBLIC_API_BASE_URL=https://resumeiq-backend-0gt7.onrender.com/api/v1`
+- **Backend Hosting:** [Render](https://render.com) (Python 3.11 / FastAPI / Uvicorn)
+  - **Live URL:** https://resumeiq-backend-0gt7.onrender.com/
+  - **Health Endpoint:** https://resumeiq-backend-0gt7.onrender.com/api/v1/health
+  - **Swagger API Docs:** https://resumeiq-backend-0gt7.onrender.com/docs
+  - **Environment Variables:**
+    - `PYTHONPATH`: `backend`
+    - `CORS_ORIGINS`: `["http://localhost:3000","http://127.0.0.1:3000","https://resume-iq-five-umber.vercel.app"]`
+- **Deployment Architecture:**
+  - The Next.js frontend is deployed serverlessly on Vercel, pointing all recruitment analysis requests to the Render backend via HTTPS.
+  - The FastAPI backend runs as a cloud web service on Render, executing stateless in-memory PDF parsing, TF-IDF cosine similarity, and candidate ranking.
+  - Production CORS explicitly permits cross-origin requests from the Vercel frontend origin while preserving local development access.
+
+---
+
 ## Verification & Testing
 
 ### Running Backend Tests

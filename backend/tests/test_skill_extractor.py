@@ -117,3 +117,95 @@ def test_multi_page_resume_extraction():
     assert page_map["Docker"] == 1
     assert page_map["AWS"] == 2
     assert page_map["Kubernetes"] == 2
+
+
+# ==============================================================================
+# MILESTONE 5 REGRESSION TESTS: COLLISION PREVENTION & BOUNDARY ENFORCEMENT
+# ==============================================================================
+
+def test_rest_prose_does_not_trigger_rest_api():
+    """English prose containing 'rest' must NOT extract REST API."""
+    text = "Collaborated closely with the rest of the team and took rest breaks."
+    detected = {ev.skill for ev in skill_extractor.extract_skills_from_text(text)}
+    assert "REST API" not in detected
+
+
+def test_node_infrastructure_does_not_trigger_nodejs():
+    """Infrastructure terms like 'worker node' must NOT extract Node.js."""
+    text = "Administered a cluster of 5 Linux worker nodes with a single primary node."
+    detected = {ev.skill for ev in skill_extractor.extract_skills_from_text(text)}
+    assert "Node.js" not in detected
+    assert "Linux" in detected
+
+
+def test_go_prose_does_not_trigger_go():
+    """Ordinary lowercase English 'go' or prose must NOT trigger Go programming language."""
+    text = "Led cross-functional teams to go beyond targets and will go to conferences."
+    detected = {ev.skill for ev in skill_extractor.extract_skills_from_text(text)}
+    assert "Go" not in detected
+
+
+def test_explicit_rest_api_triggers_rest_api():
+    """Explicit technical REST API or RESTful mentions MUST trigger REST API."""
+    text1 = "Architected asynchronous REST API services handling 15k req/sec."
+    detected1 = {ev.skill for ev in skill_extractor.extract_skills_from_text(text1)}
+    assert "REST API" in detected1
+
+    text2 = "Developed scalable restful microservices for client platforms."
+    detected2 = {ev.skill for ev in skill_extractor.extract_skills_from_text(text2)}
+    assert "REST API" in detected2
+
+
+def test_explicit_nodejs_triggers_nodejs():
+    """Explicit Node.js, nodejs, or node.js MUST trigger Node.js."""
+    text1 = "Engineered backend microservices in Node.js and Express.js."
+    detected1 = {ev.skill for ev in skill_extractor.extract_skills_from_text(text1)}
+    assert "Node.js" in detected1
+
+    text2 = "Full stack developer using nodejs and react."
+    detected2 = {ev.skill for ev in skill_extractor.extract_skills_from_text(text2)}
+    assert "Node.js" in detected2
+
+
+def test_explicit_go_triggers_go():
+    """Explicit Go programming language mentions MUST trigger Go."""
+    text1 = "Languages: Python, Go, SQL"
+    detected1 = {ev.skill for ev in skill_extractor.extract_skills_from_text(text1)}
+    assert "Go" in detected1
+
+    text2 = "Developed high-concurrency microservices in Golang."
+    detected2 = {ev.skill for ev in skill_extractor.extract_skills_from_text(text2)}
+    assert "Go" in detected2
+
+    text3 = "Senior Go developer with 4 years experience."
+    detected3 = {ev.skill for ev in skill_extractor.extract_skills_from_text(text3)}
+    assert "Go" in detected3
+
+
+def test_uppercase_ml_triggers_machine_learning():
+    """Uppercase acronym 'ML' in technical title/summary MUST trigger Machine Learning."""
+    text = "Candidate Delta | Data Analyst & Junior ML Developer"
+    detected = {ev.skill for ev in skill_extractor.extract_skills_from_text(text)}
+    assert "Machine Learning" in detected
+
+
+def test_lowercase_ml_measurement_does_not_trigger_machine_learning():
+    """Lowercase measurement or prose 'ml' must NOT trigger Machine Learning."""
+    text = "Handled 500 ml chemical reagent samples in laboratory automation."
+    detected = {ev.skill for ev in skill_extractor.extract_skills_from_text(text)}
+    assert "Machine Learning" not in detected
+
+
+def test_ambiguous_two_letter_acronyms_case_sensitivity():
+    """Two-letter acronyms (CV, DL, TF) require uppercase to avoid prose collision."""
+    # CV
+    assert "Computer Vision" not in {ev.skill for ev in skill_extractor.extract_skills_from_text("Please see attached cv for details.")}
+    assert "Computer Vision" in {ev.skill for ev in skill_extractor.extract_skills_from_text("Senior CV Research Engineer working on object detection.")}
+
+    # TF
+    assert "TensorFlow" not in {ev.skill for ev in skill_extractor.extract_skills_from_text("Calculated tf-idf matrix scores.")}
+    assert "TensorFlow" in {ev.skill for ev in skill_extractor.extract_skills_from_text("Trained deep neural networks in TF and PyTorch.")}
+
+    # DL
+    assert "Deep Learning" not in {ev.skill for ev in skill_extractor.extract_skills_from_text("Saved file to dl folder.")}
+    assert "Deep Learning" in {ev.skill for ev in skill_extractor.extract_skills_from_text("Designed DL architectures for speech synthesis.")}

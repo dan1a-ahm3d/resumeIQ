@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-10-01T17:55:49.785035",
+  "timestamp": "2026-10-02T09:39:19.099729",
   "summary": {
     "resumes_evaluated": 10,
     "job_scenarios_evaluated": 4,
-    "skill_extraction_micro_f1": 0.9724,
-    "skill_extraction_micro_precision": 0.9462,
+    "skill_extraction_micro_f1": 1.0,
+    "skill_extraction_micro_precision": 1.0,
     "skill_extraction_micro_recall": 1.0,
-    "skill_extraction_macro_f1": 0.9722,
+    "skill_extraction_macro_f1": 1.0,
     "ranking_mean_ndcg_at_5": 1.0
   },
   "skill_extraction": {
@@ -288,7 +288,7 @@
         ]
       },
       {
-        "tp": 11,
+        "tp": 12,
         "fp": 0,
         "fn": 0,
         "precision": 1.0,
@@ -302,6 +302,7 @@
           "JavaScript",
           "Jest",
           "Next.js",
+          "REST API",
           "React",
           "Redux",
           "Tailwind CSS",
@@ -319,6 +320,7 @@
           "JavaScript",
           "Jest",
           "Next.js",
+          "REST API",
           "React",
           "Redux",
           "Tailwind CSS",
@@ -335,7 +337,8 @@
           "Tailwind CSS",
           "Jest",
           "Cypress",
-          "GraphQL"
+          "GraphQL",
+          "REST API"
         ],
         "char_count": 650,
         "warnings": [],
@@ -394,18 +397,25 @@
             "skill": "GraphQL",
             "matched_text": "GraphQL",
             "context": "\u00b7 Integrated GraphQL and RESTful backend APIs with optimistic UI caching."
+          },
+          {
+            "skill": "REST API",
+            "matched_text": "RESTful",
+            "context": "\u00b7 Integrated GraphQL and RESTful backend APIs with optimistic UI caching."
           }
         ]
       },
       {
-        "tp": 7,
-        "fp": 2,
+        "tp": 9,
+        "fp": 0,
         "fn": 0,
-        "precision": 0.7778,
+        "precision": 1.0,
         "recall": 1.0,
-        "f1": 0.875,
+        "f1": 1.0,
         "true_positives": [
+          "ETL",
           "Git",
+          "Machine Learning",
           "NumPy",
           "Pandas",
           "Python",
@@ -413,10 +423,7 @@
           "Tableau",
           "scikit-learn"
         ],
-        "false_positives": [
-          "ETL",
-          "Machine Learning"
-        ],
+        "false_positives": [],
         "false_negatives": [],
         "resume_id": "candidate_delta",
         "filename": "candidate_delta.pdf",
@@ -438,7 +445,9 @@
           "NumPy",
           "scikit-learn",
           "Tableau",
-          "Git"
+          "Git",
+          "Machine Learning",
+          "ETL"
         ],
         "char_count": 759,
         "warnings": [],
@@ -491,12 +500,12 @@
         ]
       },
       {
-        "tp": 9,
-        "fp": 1,
+        "tp": 10,
+        "fp": 0,
         "fn": 0,
-        "precision": 0.9,
+        "precision": 1.0,
         "recall": 1.0,
-        "f1": 0.9474,
+        "f1": 1.0,
         "true_positives": [
           "AWS",
           "Bash",
@@ -505,12 +514,11 @@
           "Git",
           "Kubernetes",
           "Linux",
+          "Microservices",
           "Python",
           "Terraform"
         ],
-        "false_positives": [
-          "Microservices"
-        ],
+        "false_positives": [],
         "false_negatives": [],
         "resume_id": "candidate_epsilon",
         "filename": "candidate_epsilon.pdf",
@@ -535,7 +543,8 @@
           "Terraform",
           "Bash",
           "Git",
-          "Python"
+          "Python",
+          "Microservices"
         ],
         "char_count": 866,
         "warnings": [],
@@ -593,15 +602,16 @@
         ]
       },
       {
-        "tp": 9,
-        "fp": 1,
+        "tp": 10,
+        "fp": 0,
         "fn": 0,
-        "precision": 0.9,
+        "precision": 1.0,
         "recall": 1.0,
-        "f1": 0.9474,
+        "f1": 1.0,
         "true_positives": [
           "Apache Spark",
           "Docker",
+          "ETL",
           "Git",
           "Linux",
           "Pandas",
@@ -610,9 +620,7 @@
           "Redis",
           "SQL"
         ],
-        "false_positives": [
-          "ETL"
-        ],
+        "false_positives": [],
         "false_negatives": [],
         "resume_id": "candidate_zeta",
         "filename": "candidate_zeta.pdf",
@@ -637,7 +645,8 @@
           "Pandas",
           "Docker",
           "Linux",
-          "Git"
+          "Git",
+          "ETL"
         ],
         "char_count": 806,
         "warnings": [],
@@ -695,27 +704,26 @@
         ]
       },
       {
-        "tp": 10,
-        "fp": 1,
+        "tp": 11,
+        "fp": 0,
         "fn": 0,
-        "precision": 0.9091,
+        "precision": 1.0,
         "recall": 1.0,
-        "f1": 0.9524,
+        "f1": 1.0,
         "true_positives": [
           "CSS",
           "Express.js",
           "Git",
           "HTML",
           "JavaScript",
+          "Microservices",
           "MongoDB",
           "Node.js",
           "REST API",
           "React",
           "TypeScript"
         ],
-        "false_positives": [
-          "Microservices"
-        ],
+        "false_positives": [],
         "false_negatives": [],
         "resume_id": "candidate_eta",
         "filename": "candidate_eta.pdf",
@@ -742,7 +750,8 @@
           "Express.js",
           "MongoDB",
           "REST API",
-          "Git"
+          "Git",
+          "Microservices"
         ],
         "char_count": 785,
         "warnings": [],
@@ -751,11 +760,6 @@
             "skill": "JavaScript",
             "matched_text": "JavaScript",
             "context": "Full Stack JavaScript Engineer | eta@example.internal"
-          },
-          {
-            "skill": "REST API",
-            "matched_text": "REST",
-            "context": "Full stack web developer with 4 years of experience building scalable single-page web applications and REST"
           },
           {
             "skill": "TypeScript",
@@ -791,6 +795,11 @@
             "skill": "React",
             "matched_text": "React",
             "context": "Frameworks & Runtimes: React, Node.js, Express.js, MongoDB"
+          },
+          {
+            "skill": "REST API",
+            "matched_text": "REST API",
+            "context": "Architecture: REST API, Git"
           },
           {
             "skill": "Git",
@@ -975,17 +984,17 @@
     ],
     "aggregate": {
       "micro": {
-        "tp": 88,
-        "fp": 5,
+        "tp": 94,
+        "fp": 0,
         "fn": 0,
-        "precision": 0.9462,
+        "precision": 1.0,
         "recall": 1.0,
-        "f1": 0.9724
+        "f1": 1.0
       },
       "macro": {
-        "precision": 0.9487,
+        "precision": 1.0,
         "recall": 1.0,
-        "f1": 0.9722
+        "f1": 1.0
       }
     }
   },
@@ -1112,7 +1121,7 @@
               "NLP",
               "Pandas"
             ],
-            "detected_skills_count": 11,
+            "detected_skills_count": 12,
             "rationale": "Not relevant: Frontend TypeScript/React engineer with zero ML/NLP competencies.",
             "predicted_rank": 6
           }
@@ -1216,7 +1225,7 @@
               "PostgreSQL",
               "Docker"
             ],
-            "detected_skills_count": 11,
+            "detected_skills_count": 12,
             "rationale": "Not relevant: Frontend React/CSS developer.",
             "predicted_rank": 5
           },
@@ -1343,7 +1352,7 @@
               "CI/CD",
               "Linux"
             ],
-            "detected_skills_count": 11,
+            "detected_skills_count": 12,
             "rationale": "Not relevant: Frontend developer.",
             "predicted_rank": 5
           },
@@ -1392,7 +1401,7 @@
               "CSS"
             ],
             "missing_required_skills": [],
-            "detected_skills_count": 11,
+            "detected_skills_count": 12,
             "rationale": "Strong match: All 5 required skills (React, TypeScript, JavaScript, HTML, CSS) plus Next.js, Tailwind CSS, Redux, Jest.",
             "predicted_rank": 1
           },
@@ -1497,34 +1506,6 @@
     "average_ndcg_at_5": 1.0
   },
   "error_analysis": [
-    {
-      "category": "Extraction: False Positive Skill",
-      "item": "candidate_delta.pdf",
-      "description": "Skills detected that were not explicitly in ground truth: ['ETL', 'Machine Learning']",
-      "detail": "Model detected terms matching controlled aliases (e.g. general technical keywords) present in context.",
-      "severity": "Low"
-    },
-    {
-      "category": "Extraction: False Positive Skill",
-      "item": "candidate_epsilon.pdf",
-      "description": "Skills detected that were not explicitly in ground truth: ['Microservices']",
-      "detail": "Model detected terms matching controlled aliases (e.g. general technical keywords) present in context.",
-      "severity": "Low"
-    },
-    {
-      "category": "Extraction: False Positive Skill",
-      "item": "candidate_zeta.pdf",
-      "description": "Skills detected that were not explicitly in ground truth: ['ETL']",
-      "detail": "Model detected terms matching controlled aliases (e.g. general technical keywords) present in context.",
-      "severity": "Low"
-    },
-    {
-      "category": "Extraction: False Positive Skill",
-      "item": "candidate_eta.pdf",
-      "description": "Skills detected that were not explicitly in ground truth: ['Microservices']",
-      "detail": "Model detected terms matching controlled aliases (e.g. general technical keywords) present in context.",
-      "severity": "Low"
-    },
     {
       "category": "Extraction: Scanned Image Handling",
       "item": "scanned_image_resume.pdf",

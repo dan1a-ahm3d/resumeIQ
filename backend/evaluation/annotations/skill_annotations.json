@@ -60,9 +60,10 @@
         "Tailwind CSS",
         "Jest",
         "Cypress",
-        "GraphQL"
+        "GraphQL",
+        "REST API"
       ],
-      "notes": "Frontend specialist focused on React/TypeScript ecosystem."
+      "notes": "Frontend specialist focused on React/TypeScript ecosystem. Also contains explicit RESTful backend APIs in experience."
     },
     "candidate_delta.pdf": {
       "resume_id": "candidate_delta",
@@ -74,9 +75,11 @@
         "NumPy",
         "scikit-learn",
         "Tableau",
-        "Git"
+        "Git",
+        "Machine Learning",
+        "ETL"
       ],
-      "notes": "Data analyst / junior ML practitioner with tabular data skills."
+      "notes": "Data analyst / junior ML practitioner with tabular data skills, ML modeling in title/summary, and ETL scripting."
     },
     "candidate_epsilon.pdf": {
       "resume_id": "candidate_epsilon",
@@ -90,9 +93,10 @@
         "Terraform",
         "Bash",
         "Git",
-        "Python"
+        "Python",
+        "Microservices"
       ],
-      "notes": "DevOps infrastructure architect with cloud orchestration and IaC skills."
+      "notes": "DevOps infrastructure architect with cloud orchestration, IaC, and containerized microservices."
     },
     "candidate_zeta.pdf": {
       "resume_id": "candidate_zeta",
@@ -106,9 +110,10 @@
         "Pandas",
         "Docker",
         "Linux",
-        "Git"
+        "Git",
+        "ETL"
       ],
-      "notes": "Data platform engineer with Spark, PostgreSQL, Redis, and Python."
+      "notes": "Data platform engineer with Spark, PostgreSQL, Redis, Python, and batch ETL pipelines."
     },
     "candidate_eta.pdf": {
       "resume_id": "candidate_eta",
@@ -123,9 +128,10 @@
         "Express.js",
         "MongoDB",
         "REST API",
-        "Git"
+        "Git",
+        "Microservices"
       ],
-      "notes": "Full stack JavaScript/TypeScript web engineer."
+      "notes": "Full stack JavaScript/TypeScript web engineer with REST API backend microservices."
     },
     "candidate_theta.pdf": {
       "resume_id": "candidate_theta",

@@ -47,7 +47,7 @@ CONTROLLED_SKILL_TAXONOMY: Dict[str, List[str]] = {
     "Redux": ["redux", "redux toolkit"],
 
     # Backend & Web Frameworks
-    "Node.js": ["nodejs", "node.js", "node js", "node"],
+    "Node.js": ["nodejs", "node.js", "node js"],
     "FastAPI": ["fastapi", "fast api", "fast-api"],
     "Flask": ["flask"],
     "Django": ["django", "django rest framework", "drf"],
@@ -57,7 +57,7 @@ CONTROLLED_SKILL_TAXONOMY: Dict[str, List[str]] = {
     ".NET": [".net", "dotnet", ".net core"],
     "Ruby on Rails": ["ruby on rails", "rails"],
     "GraphQL": ["graphql", "apollo graphql"],
-    "REST API": ["rest api", "restful api", "rest apis", "restful apis", "rest"],
+    "REST API": ["rest api", "restful api", "rest apis", "restful apis", "restful"],
     "gRPC": ["grpc"],
     "WebSockets": ["websockets", "websocket"],
     "Microservices": ["microservices", "microservice architecture"],
@@ -131,17 +131,27 @@ class SkillExtractorService:
     def __init__(self):
         # Precompile exact boundary patterns for each skill and alias
         self.skill_patterns: List[Tuple[str, re.Pattern, str]] = []
+
+        # Short ambiguous technical acronyms requiring case-sensitive uppercase matching
+        CASE_SENSITIVE_ACRONYMS = {"ml", "cv", "dl", "tf"}
+
         for canonical, aliases in CONTROLLED_SKILL_TAXONOMY.items():
             for alias in aliases:
                 escaped = re.escape(alias)
-                # Specialized boundary handling:
+                # Specialized boundary & context handling:
                 # 1. C: Must NOT be followed by + (C++) or # (C#) or word chars, and not preceded by word chars or hyphen/dot
                 if alias == "c":
-                    pattern_str = rf"(?i)(?<![A-Za-z0-9_.\-]){escaped}(?![A-Za-z0-9_+#])"
+                    pattern_str = rf"(?i)(?<![A-Za-z0-9_.\-])c(?![A-Za-z0-9_+#])"
                 # 2. C++, C#, .NET: require lookaround boundary respecting symbols
                 elif alias in ["c++", "c#", ".net"]:
                     pattern_str = rf"(?i)(?<![A-Za-z0-9_]){escaped}(?![A-Za-z0-9_+#])"
-                # 3. Standard skills
+                # 3. Go: case-sensitive 'Go' preventing collisions with English verb 'go'
+                elif alias == "go":
+                    pattern_str = rf"(?<![A-Za-z0-9_])Go(?![A-Za-z0-9_])(?!\s+(?:beyond|to\b|into\b|through\b|for\b|ahead\b))"
+                # 4. Short ambiguous acronyms (ML, CV, DL, TF): require exact uppercase
+                elif alias in CASE_SENSITIVE_ACRONYMS:
+                    pattern_str = rf"(?<![A-Za-z0-9_]){re.escape(alias.upper())}(?![A-Za-z0-9_])"
+                # 5. Standard skills: case-insensitive with word boundaries
                 else:
                     pattern_str = rf"(?i)(?<![A-Za-z0-9_]){escaped}(?![A-Za-z0-9_])"
                 
@@ -150,7 +160,6 @@ class SkillExtractorService:
                     self.skill_patterns.append((canonical, compiled, alias))
                 except re.error:
                     continue
-
     def extract_skills_from_text(self, text: str, page_number: int = 1) -> List[SkillEvidence]:
         """
         Extracts skills from text with exact verbatim sentence context.

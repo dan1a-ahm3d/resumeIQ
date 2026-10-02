@@ -25,6 +25,7 @@ class Settings(BaseSettings):
     
     # Upload limits
     MAX_FILE_SIZE_BYTES: int = 10 * 1024 * 1024  # 10 MB
+    MAX_RANK_BATCH_SIZE: int = 50  # Maximum candidates per batch ranking request
     ALLOWED_EXTENSIONS: List[str] = [".pdf"]
     
     # NLP Model

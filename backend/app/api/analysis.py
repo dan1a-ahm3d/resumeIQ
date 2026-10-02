@@ -6,10 +6,11 @@ Implements:
 3. POST /api/v1/analyze/rank   -> Multiple candidate resume ranking against one JD
 """
 import uuid
-from typing import List, Optional
+from typing import List, Optional, Dict
 from fastapi import APIRouter, UploadFile, File, Form, HTTPException, status
 from pydantic import BaseModel
 
+from app.core.config import settings
 from app.models.resume import ParsedResume
 from app.models.analysis import (
     CandidateAnalysis,
@@ -33,6 +34,48 @@ class ResumeParseResponse(BaseModel):
     warnings: List[str]
 
 
+PDF_MAGIC_BYTES = b"%PDF-"
+
+
+async def validate_and_read_pdf_upload(file: UploadFile) -> bytes:
+    """
+    Strictly validates and reads an uploaded PDF file:
+    1. Checks filename extension (.pdf)
+    2. Reads data safely and enforces MAX_FILE_SIZE_BYTES limit (raises HTTP 413)
+    3. Checks for empty content (raises HTTP 400)
+    4. Validates PDF magic byte header '%PDF-' (raises HTTP 400)
+    """
+    fname = file.filename or "unknown.pdf"
+    if not fname.lower().endswith(".pdf"):
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=f"File '{fname}' is not supported. Only PDF files (.pdf) are accepted."
+        )
+
+    content = await file.read()
+
+    if len(content) > settings.MAX_FILE_SIZE_BYTES:
+        max_mb = settings.MAX_FILE_SIZE_BYTES // (1024 * 1024)
+        raise HTTPException(
+            status_code=413,
+            detail=f"File '{fname}' exceeds the maximum allowed size of {max_mb}MB."
+        )
+
+    if len(content) == 0:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=f"Uploaded file '{fname}' is empty (0 bytes)."
+        )
+
+    if not content.startswith(PDF_MAGIC_BYTES):
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=f"File '{fname}' does not have a valid PDF header signature (%PDF-)."
+        )
+
+    return content
+
+
 def _process_candidate_evaluation(
     file_bytes: bytes,
     filename: str,
@@ -40,10 +83,23 @@ def _process_candidate_evaluation(
     candidate_id: Optional[str] = None
 ) -> CandidateAnalysis:
     """Core pipeline orchestrating extraction, matching, and explainability for one resume."""
-    if not file_bytes:
+    if len(file_bytes) > settings.MAX_FILE_SIZE_BYTES:
+        max_mb = settings.MAX_FILE_SIZE_BYTES // (1024 * 1024)
+        raise HTTPException(
+            status_code=413,
+            detail=f"Uploaded file '{filename}' exceeds maximum allowed size of {max_mb}MB."
+        )
+
+    if not file_bytes or len(file_bytes) == 0:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail=f"Uploaded file '{filename}' is empty."
+        )
+
+    if not file_bytes.startswith(PDF_MAGIC_BYTES):
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=f"File '{filename}' does not have a valid PDF header signature (%PDF-)."
         )
 
     cid = candidate_id or f"CAN-{uuid.uuid4().hex[:6].upper()}"
@@ -119,13 +175,7 @@ def _process_candidate_evaluation(
 @router.post("/resume", response_model=ResumeParseResponse)
 async def parse_resume_endpoint(file: UploadFile = File(...)):
     """Accepts a PDF resume, extracts structured text and detected skills."""
-    if not file.filename.lower().endswith(".pdf"):
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail="Only PDF files are supported."
-        )
-
-    content = await file.read()
+    content = await validate_and_read_pdf_upload(file)
     try:
         parsed_resume = pdf_parser.parse_pdf(content, file.filename)
     except ValueError as e:
@@ -151,19 +201,13 @@ async def match_candidate_endpoint(
     Evaluates a single resume PDF against a Job Description.
     Calculates TF-IDF similarity, required skill coverage, explainable score, and evidence citations.
     """
-    if not file.filename.lower().endswith(".pdf"):
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail="Only PDF files are supported for candidate matching."
-        )
-
     if not job_description or not job_description.strip():
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="Job description text cannot be empty."
         )
 
-    content = await file.read()
+    content = await validate_and_read_pdf_upload(file)
     analysis = _process_candidate_evaluation(
         file_bytes=content,
         filename=file.filename,
@@ -180,11 +224,18 @@ async def rank_candidates_endpoint(
     """
     Ranks multiple resume PDFs against one Job Description.
     Orders candidates strictly by overall_score DESCENDING with deterministic tie-breaking.
+    Features batch-size capping (MAX_RANK_BATCH_SIZE) and candidate failure isolation.
     """
-    if not files:
+    if not files or len(files) == 0:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="At least one resume PDF must be provided."
+        )
+
+    if len(files) > settings.MAX_RANK_BATCH_SIZE:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=f"Batch upload exceeds maximum allowed limit of {settings.MAX_RANK_BATCH_SIZE} files. Provided: {len(files)}."
         )
 
     if not job_description or not job_description.strip():
@@ -197,19 +248,42 @@ async def rank_candidates_endpoint(
     job_title = parsed_jd.title or "Evaluated Position"
 
     evaluated_candidates: List[CandidateAnalysis] = []
+    failed_candidates: List[Dict[str, str]] = []
+    batch_warnings: List[str] = []
 
     for file in files:
-        if not file.filename.lower().endswith(".pdf"):
-            continue  # Skip non-PDFs or collect error
-        content = await file.read()
-        analysis = _process_candidate_evaluation(
-            file_bytes=content,
-            filename=file.filename,
-            raw_jd=job_description
-        )
-        evaluated_candidates.append(analysis)
+        fname = file.filename or "unnamed_resume.pdf"
+        try:
+            content = await validate_and_read_pdf_upload(file)
+            analysis = _process_candidate_evaluation(
+                file_bytes=content,
+                filename=fname,
+                raw_jd=job_description
+            )
+            evaluated_candidates.append(analysis)
+            if analysis.warnings:
+                for w in analysis.warnings:
+                    batch_warnings.append(f"[{fname}] {w}")
+        except HTTPException as he:
+            failed_candidates.append({
+                "filename": fname,
+                "error": str(he.detail)
+            })
+            batch_warnings.append(f"Skipped '{fname}': {he.detail}")
+        except Exception as ex:
+            failed_candidates.append({
+                "filename": fname,
+                "error": str(ex)
+            })
+            batch_warnings.append(f"Skipped '{fname}': {str(ex)}")
 
     if not evaluated_candidates:
+        if failed_candidates:
+            summary = "; ".join([f"{f['filename']}: {f['error']}" for f in failed_candidates])
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail=f"All uploaded candidate files failed processing: {summary}"
+            )
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="None of the uploaded files were valid PDF documents."
@@ -243,5 +317,7 @@ async def rank_candidates_endpoint(
     return MultiCandidateRankingResponse(
         job_title=job_title,
         total_candidates=len(rankings),
-        rankings=rankings
+        rankings=rankings,
+        warnings=batch_warnings,
+        failed_candidates=failed_candidates
     )

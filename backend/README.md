@@ -192,7 +192,8 @@ ResumeIQ is designed to prevent unfair negative assumptions about candidates.
 ### Strict Anti-Inference Policy
 The skill extractor enforces an anti-inference guarantee:
 - If a resume mentions **"React"**, the system will **NOT** infer "JavaScript", "HTML", "CSS", or "Node.js".
-- Only skills that independently and explicitly appear in the document (or via verified aliases like `ReactJS` $ightarrow$ `React`) are recorded.
+- Only skills that independently and explicitly appear in the document (or via verified aliases like `ReactJS` $
+ightarrow$ `React`) are recorded.
 
 ---
 
@@ -206,3 +207,29 @@ The skill extractor enforces an anti-inference guarantee:
 ## 11. Ethical & Decision-Support Notice
 > [!IMPORTANT]
 > **ResumeIQ is an assistive decision-support tool for recruiters.** It does **not** make hiring, shortlisting, or rejection decisions. All rankings and scores are mathematical heuristics designed to highlight relevant evidence; human recruiters maintain final decision authority.
+---
+
+## 12. Production Hardening & Input Safeguards
+Implemented in Milestone 6 to ensure robust, resilient, and safe production operation:
+
+### 1. File Upload Size Enforcement (10MB Limit)
+- All upload endpoints (`/api/v1/analyze/resume`, `/api/v1/analyze/match`, `/api/v1/analyze/rank`) enforce the centralized `settings.MAX_FILE_SIZE_BYTES = 10MB` limit.
+- Uploads exceeding 10MB are rejected immediately with `HTTP 413 Payload Too Large`.
+
+### 2. PDF Magic Byte Signature Validation
+- File content is validated for the standard PDF magic header signature (`%PDF-`).
+- Renamed non-PDF files (e.g., text, binaries, or HTML disguised with a `.pdf` extension) are rejected upfront with `HTTP 400 Bad Request`.
+
+### 3. Batch Size Capping (50 Candidates)
+- The `/api/v1/analyze/rank` endpoint enforces `settings.MAX_RANK_BATCH_SIZE = 50`.
+- Requests containing more than 50 files are rejected with `HTTP 400 Bad Request` to prevent resource exhaustion and request timeouts.
+
+### 4. Batch Failure Isolation
+- In batch ranking (`/api/v1/analyze/rank`), individual candidate parsing errors (e.g., a corrupt PDF among valid resumes) are isolated.
+- Valid resumes continue to be parsed, scored, and ranked.
+- Failed candidates are recorded in structured response fields: `failed_candidates: [{"filename": "...", "error": "..."}]` and `warnings: ["..."]`.
+- If all uploaded candidates in the batch are invalid, the endpoint returns an overall `HTTP 400 Bad Request` detailing the causes.
+
+### 5. Ephemeral In-Memory Processing
+- Uploaded PDF streams are processed purely in-memory via PyMuPDF buffers and garbage-collected upon request completion.
+- No resume bytes or extracted candidate texts are written to disk or stored in persistent databases.

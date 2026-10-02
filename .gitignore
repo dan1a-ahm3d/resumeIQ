@@ -37,3 +37,14 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+# python virtual environments
+.venv/
+venv/
+env/
+
+# ide metadata
+.vscode/
+.idea/
+
+# logs
+*.log

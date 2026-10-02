@@ -1,7 +1,7 @@
 """
 Pydantic Models for Scoring, Evidence, and Multi-Candidate Ranking.
 """
-from typing import List, Optional, Literal
+from typing import List, Optional, Dict, Literal
 from pydantic import BaseModel, Field
 from app.models.resume import ParsedResume
 
@@ -67,5 +67,7 @@ class CandidateRanking(BaseModel):
 
 class MultiCandidateRankingResponse(BaseModel):
     job_title: str = Field(default="Candidate Evaluation", description="Evaluated role title")
-    total_candidates: int = Field(..., description="Total candidate resumes processed")
+    total_candidates: int = Field(..., description="Total candidate resumes successfully processed")
     rankings: List[CandidateRanking] = Field(default_factory=list, description="Ranked candidate list")
+    warnings: List[str] = Field(default_factory=list, description="Non-fatal warnings or candidate parsing errors")
+    failed_candidates: List[Dict[str, str]] = Field(default_factory=list, description="List of failed candidates with filename and error")
